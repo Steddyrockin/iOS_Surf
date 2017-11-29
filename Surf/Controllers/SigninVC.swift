@@ -32,4 +32,8 @@ class SigninVC: UIViewController {
     }
     */
 
+    @IBAction func loginAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "home_segue", sender: self)
+    }
+    
 }

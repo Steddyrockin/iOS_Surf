@@ -23,6 +23,11 @@
 		E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED141FCE756B00AA372C /* UIView+Shadow.swift */; };
 		E25DED251FCE75D600AA372C /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED241FCE75D600AA372C /* SigninVC.swift */; };
 		E25DED271FCE75E700AA372C /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED261FCE75E700AA372C /* SignupVC.swift */; };
+		E2AA7FCA1FCF2327000DA15B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FC91FCF2327000DA15B /* HomeVC.swift */; };
+		E2AA7FCC1FCF233E000DA15B /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FCB1FCF233E000DA15B /* VideosVC.swift */; };
+		E2AA7FCE1FCF234E000DA15B /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */; };
+		E2AA7FD01FCF235F000DA15B /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FCF1FCF235F000DA15B /* DiscoverVC.swift */; };
+		E2AA7FD21FCF2370000DA15B /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FD11FCF2370000DA15B /* AccountVC.swift */; };
 		E2B0F9681FCEE0220000A978 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9621FCEE0210000A978 /* Brandon_blk.otf */; };
 		E2B0F9691FCEE0220000A978 /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9631FCEE0210000A978 /* Brandon_reg.otf */; };
 		E2B0F96A1FCEE0220000A978 /* texgyreadventor-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9641FCEE0210000A978 /* texgyreadventor-bold.otf */; };
@@ -54,6 +59,11 @@
 		E25DED141FCE756B00AA372C /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		E25DED241FCE75D600AA372C /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		E25DED261FCE75E700AA372C /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		E2AA7FC91FCF2327000DA15B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E2AA7FCB1FCF233E000DA15B /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
+		E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
+		E2AA7FCF1FCF235F000DA15B /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		E2AA7FD11FCF2370000DA15B /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		E2B0F9621FCEE0210000A978 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
 		E2B0F9631FCEE0210000A978 /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
 		E2B0F9641FCEE0210000A978 /* texgyreadventor-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bold.otf"; sourceTree = "<group>"; };
@@ -131,6 +141,11 @@
 			children = (
 				E25DED241FCE75D600AA372C /* SigninVC.swift */,
 				E25DED261FCE75E700AA372C /* SignupVC.swift */,
+				E2AA7FC91FCF2327000DA15B /* HomeVC.swift */,
+				E2AA7FCB1FCF233E000DA15B /* VideosVC.swift */,
+				E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */,
+				E2AA7FCF1FCF235F000DA15B /* DiscoverVC.swift */,
+				E2AA7FD11FCF2370000DA15B /* AccountVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -410,14 +425,19 @@
 				E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */,
 				E25DED191FCE756B00AA372C /* UIColor+HexString.m in Sources */,
 				E25DED1A1FCE756B00AA372C /* UIImage+CS_Extensions.m in Sources */,
+				E2AA7FD01FCF235F000DA15B /* DiscoverVC.swift in Sources */,
 				E25DED1F1FCE756B00AA372C /* UIView+Dimension.swift in Sources */,
+				E2AA7FCA1FCF2327000DA15B /* HomeVC.swift in Sources */,
+				E2AA7FCE1FCF234E000DA15B /* ChannelsVC.swift in Sources */,
 				E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */,
+				E2AA7FCC1FCF233E000DA15B /* VideosVC.swift in Sources */,
 				E25DED211FCE756B00AA372C /* UIView+Layer.swift in Sources */,
 				E25DED271FCE75E700AA372C /* SignupVC.swift in Sources */,
 				E25DED251FCE75D600AA372C /* SigninVC.swift in Sources */,
 				E25DED1E1FCE756B00AA372C /* UIView+Border.m in Sources */,
 				E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */,
 				E25DED201FCE756B00AA372C /* UIView+Gradient.swift in Sources */,
+				E2AA7FD21FCF2370000DA15B /* AccountVC.swift in Sources */,
 				E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

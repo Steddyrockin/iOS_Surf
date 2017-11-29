@@ -31,5 +31,10 @@ class SignupVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
