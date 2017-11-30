@@ -16,4 +16,7 @@ target 'Surf' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
   
+  # HockeySDK
+  pod 'HockeySDK'
+  
 end

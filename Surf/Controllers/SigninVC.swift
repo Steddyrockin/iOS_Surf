@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+import PKHUD
 
 class SigninVC: UIViewController {
 
@@ -36,4 +39,22 @@ class SigninVC: UIViewController {
         self.performSegue(withIdentifier: "home_segue", sender: self)
     }
     
+    @IBAction func fbLoginAction(_ sender: UIButton) {
+        let fbLoginManager = FBSDKLoginManager.init()
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            
+            PKHUD.sharedHUD.hide()
+            if let error = error {
+                PKHUD.sharedHUD.contentView = PKHUDErrorView(title: "Error", subtitle: error.localizedDescription)
+                PKHUD.sharedHUD.show()
+                PKHUD.sharedHUD.hide(afterDelay: 2)
+                return
+            }
+            
+            self.performSegue(withIdentifier: "home_segue", sender: self)
+        }
+    }
 }
