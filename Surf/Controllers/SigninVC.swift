@@ -13,6 +13,9 @@ import PKHUD
 
 class SigninVC: UIViewController {
 
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +27,39 @@ class SigninVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func textFieldEditBegin(_ sender: UITextField) {
+        if sender == self.emailTxt {
+            
+            if sender.text == "Email" {
+                sender.text = ""
+            }
+            
+        }
+        else {
+            
+            if sender.text == "Password" {
+                sender.text = ""
+                sender.isSecureTextEntry = true
+            }
+            
+        }
+    }
+    
+    @IBAction func textFieldEditEnd(_ sender: UITextField) {
+        if sender == self.emailTxt {
+            
+            if sender.text == "" {
+                sender.text = "Email"
+            }
+        }
+        else {
+            
+            if sender.text == "" {
+                sender.text = "Password"
+                sender.isSecureTextEntry = false
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -36,6 +71,17 @@ class SigninVC: UIViewController {
     */
 
     @IBAction func loginAction(_ sender: UIButton) {
+        
+        if self.emailTxt.text == "Email" {
+            self.showAlert(contents: "Please input the email address.")
+            return
+        }
+        
+        if self.passTxt.text == "Password" {
+            self.showAlert(contents: "Please input the password.")
+            return
+        }
+        
         self.performSegue(withIdentifier: "home_segue", sender: self)
     }
     
@@ -48,13 +94,18 @@ class SigninVC: UIViewController {
             
             PKHUD.sharedHUD.hide()
             if let error = error {
-                PKHUD.sharedHUD.contentView = PKHUDErrorView(title: "Error", subtitle: error.localizedDescription)
-                PKHUD.sharedHUD.show()
-                PKHUD.sharedHUD.hide(afterDelay: 2)
+                
+                self.showAlert(contents: error.localizedDescription)
                 return
             }
             
             self.performSegue(withIdentifier: "home_segue", sender: self)
         }
+    }
+    
+    func showAlert(contents : String) {
+        PKHUD.sharedHUD.contentView = PKHUDErrorView(title: nil, subtitle: contents)
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2)
     }
 }

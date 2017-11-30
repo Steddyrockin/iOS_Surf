@@ -61,6 +61,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="dS5-3U-uA1"/>
+                                            <action selector="textFieldEditBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="9fV-Vx-GQi"/>
+                                            <action selector="textFieldEditEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="XuF-Td-2CW"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,7 +91,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Rev-2m-5H7"/>
+                                            <action selector="textFieldEditEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="pxU-di-UoV"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -171,6 +180,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="ySx-Hd-BiI" id="CJx-8W-CT0"/>
+                        <outlet property="passTxt" destination="f2K-hg-mYV" id="vww-2d-7hU"/>
                         <segue destination="QPb-Yo-1iB" kind="show" identifier="home_segue" id="e0M-11-IQ4"/>
                     </connections>
                 </viewController>
@@ -209,6 +220,9 @@
                                         <real key="value" value="55"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loadPhotoAction:" destination="3CA-To-DE0" eventType="touchUpInside" id="t0M-ID-ioZ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ah-U7-Vk5">
                                 <rect key="frame" x="37" y="241" width="300" height="40"/>
@@ -228,6 +242,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="3CA-To-DE0" eventType="editingDidBegin" id="Br5-kC-jJJ"/>
+                                            <action selector="textFieldEditEnd:" destination="3CA-To-DE0" eventType="editingDidEnd" id="hPD-kx-NgZ"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -250,6 +268,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="3CA-To-DE0" eventType="editingDidBegin" id="nq1-sS-rXh"/>
+                                            <action selector="textFieldEditEnd:" destination="3CA-To-DE0" eventType="editingDidEnd" id="QbZ-Tt-Lkw"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -272,6 +294,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="3CA-To-DE0" eventType="editingDidBegin" id="lXX-T7-zNr"/>
+                                            <action selector="textFieldEditEnd:" destination="3CA-To-DE0" eventType="editingDidEnd" id="0of-XV-epN"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -294,6 +320,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="3CA-To-DE0" eventType="editingDidBegin" id="to7-Q3-6Ry"/>
+                                            <action selector="textFieldEditEnd:" destination="3CA-To-DE0" eventType="editingDidEnd" id="Fig-RW-EcG"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -316,6 +346,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditBegin:" destination="3CA-To-DE0" eventType="editingDidBegin" id="sWB-w3-LVE"/>
+                                            <action selector="textFieldEditEnd:" destination="3CA-To-DE0" eventType="editingDidEnd" id="yyV-CO-uhK"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -335,11 +369,23 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signupAction:" destination="3CA-To-DE0" eventType="touchUpInside" id="qFT-pv-AqO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.17737281320000001" blue="0.1119052693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="A96-MV-WIl"/>
                     </view>
+                    <connections>
+                        <outlet property="cpassTxt" destination="9BL-28-yRv" id="12W-gf-Gl6"/>
+                        <outlet property="emailTxt" destination="LmZ-h1-EwN" id="jmr-1p-nAk"/>
+                        <outlet property="fnameTxt" destination="gLu-Hq-0kj" id="gRf-WW-Vd1"/>
+                        <outlet property="lnameText" destination="44c-Lo-Quv" id="vRL-pj-1Zv"/>
+                        <outlet property="passTxt" destination="bZQ-Bo-yyy" id="MSx-oi-h4N"/>
+                        <outlet property="photoBtn" destination="egk-Ps-nH9" id="kke-xz-kqG"/>
+                        <segue destination="QPb-Yo-1iB" kind="show" identifier="home_segue" id="4n9-pn-vWd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z12-TO-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,4 +659,7 @@
         <image name="videos" width="23" height="23"/>
         <image name="videos_sel" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4n9-pn-vWd"/>
+    </inferredMetricsTieBreakers>
 </document>
