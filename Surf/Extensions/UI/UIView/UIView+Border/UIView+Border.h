@@ -14,6 +14,4 @@
 @property (nonatomic) IBInspectable CGFloat borderWidth;
 @property (nonatomic) IBInspectable CGFloat cornerRadius;
 
-- (void) addGradientBorder;
-
 @end

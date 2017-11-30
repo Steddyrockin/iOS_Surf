@@ -17,6 +17,6 @@ target 'Surf' do
   pod 'FBSDKCoreKit'
   
   # HockeySDK
-  pod 'HockeySDK'
+  pod 'HockeySDK', '~> 5.0.0'
   
 end

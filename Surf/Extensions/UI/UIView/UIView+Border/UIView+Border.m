@@ -28,15 +28,4 @@
     [self.layer setCornerRadius:cornerRadius];
 }
 
-- (void)addGradientBorder {
-    CAGradientLayer *gradientLayer;
-    gradientLayer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    gradientLayer.startPoint = CGPointMake(0.0, 0.5);
-    gradientLayer.endPoint = CGPointMake(1.0, 0.5);
-    gradientLayer.colors = [NSArray arrayWithObjects:UIColor.redColor.CGColor, UIColor.blueColor.CGColor, nil];
-    
-    
-    [self.layer addSublayer:gradientLayer];
-}
-
 @end

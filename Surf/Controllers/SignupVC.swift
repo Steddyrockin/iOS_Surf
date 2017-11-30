@@ -199,10 +199,12 @@ UINavigationControllerDelegate {
             //display image
             self.photoBtn.setImage(image, for: UIControlState.normal)
         }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        picker.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
