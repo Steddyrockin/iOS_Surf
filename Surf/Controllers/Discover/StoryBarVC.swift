@@ -1,19 +1,21 @@
 //
-//  DiscoverVC.swift
+//  StoryBarVC.swift
 //  Surf
 //
-//  Created by Liming on 30/11/2017.
+//  Created by Liming on 02/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class DiscoverVC: UIViewController {
+class StoryBarVC: UIViewController, IndicatorInfoProvider  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +33,9 @@ class DiscoverVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "STORIES"
+    }
 
 }

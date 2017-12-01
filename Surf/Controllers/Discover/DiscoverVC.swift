@@ -1,5 +1,5 @@
 //
-//  AccountVC.swift
+//  DiscoverVC.swift
 //  Surf
 //
 //  Created by Liming on 30/11/2017.
@@ -9,19 +9,13 @@
 import UIKit
 import XLPagerTabStrip
 
-class AccountVC: ButtonBarPagerTabStripViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+class DiscoverVC: ButtonBarPagerTabStripViewController {
 
-    @IBOutlet weak var barView: ButtonBarView!
-    @IBOutlet weak var contentsView: UIScrollView!
-    @IBOutlet weak var photoImg: UIImageView!
-    
     var isReload = false
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        self.buttonBarView.backgroundColor = UIColor.clear
+        self.settings.style.buttonBarTop = 48
         self.settings.style.selectedBarHeight = 3
         self.settings.style.selectedBarBackgroundColor = UIColor.white
         self.settings.style.buttonBarBackgroundColor = UIColor.clear
@@ -29,7 +23,11 @@ UINavigationControllerDelegate  {
         self.settings.style.buttonBarMinimumInteritemSpacing = 0
         self.settings.style.buttonBarItemTitleColor = UIColor.white
         self.settings.style.buttonBarItemFont = UIFont.init(name: "Brandon Grotesque", size: 8)!
+        
+        super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+        self.buttonBarView.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,9 +38,9 @@ UINavigationControllerDelegate  {
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_0 = self.storyboard?.instantiateViewController(withIdentifier: "MyMediaVC")
-        let child_1 = self.storyboard?.instantiateViewController(withIdentifier: "MyChannelsVC")
-        let child_2 = self.storyboard?.instantiateViewController(withIdentifier: "SettingsVC")
+        let child_0 = self.storyboard?.instantiateViewController(withIdentifier: "DiscoverBarVC")
+        let child_1 = self.storyboard?.instantiateViewController(withIdentifier: "GalleryBarVC")
+        let child_2 = self.storyboard?.instantiateViewController(withIdentifier: "StoryBarVC")
         
         guard isReload else {
             return [child_0!, child_1!, child_2!]
@@ -69,32 +67,6 @@ UINavigationControllerDelegate  {
             pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
         }
         super.reloadPagerTabStripView()
-    }
-    
-    @IBAction func editPhotoAction(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-
-    }
-    
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //save image
-            //display image
-            self.photoImg.image = image
-        }
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
     
     /*
