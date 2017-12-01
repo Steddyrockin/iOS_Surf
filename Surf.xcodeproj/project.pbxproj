@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		62CC53527AABC4D51A81CDFD /* Pods_Surf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4206082346F7E208796E760 /* Pods_Surf.framework */; };
+		E24730F91FD180CB00513F91 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24730F81FD180CB00513F91 /* SettingsVC.swift */; };
+		E24730FB1FD1867D00513F91 /* MyMediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24730FA1FD1867D00513F91 /* MyMediaVC.swift */; };
+		E24730FD1FD1869600513F91 /* MyChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24730FC1FD1869600513F91 /* MyChannelsVC.swift */; };
 		E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECE51FCE672100AA372C /* AppDelegate.swift */; };
 		E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECE91FCE672100AA372C /* Main.storyboard */; };
 		E25DECED1FCE672100AA372C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DECEC1FCE672100AA372C /* Assets.xcassets */; };
@@ -23,6 +26,8 @@
 		E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED141FCE756B00AA372C /* UIView+Shadow.swift */; };
 		E25DED251FCE75D600AA372C /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED241FCE75D600AA372C /* SigninVC.swift */; };
 		E25DED271FCE75E700AA372C /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DED261FCE75E700AA372C /* SignupVC.swift */; };
+		E2647B5F1FD0FF4A0055FEF8 /* ChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2647B5D1FD0FF4A0055FEF8 /* ChildExampleViewController.swift */; };
+		E2647B601FD0FF4A0055FEF8 /* TableChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2647B5E1FD0FF4A0055FEF8 /* TableChildExampleViewController.swift */; };
 		E2AA7FCA1FCF2327000DA15B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FC91FCF2327000DA15B /* HomeVC.swift */; };
 		E2AA7FCC1FCF233E000DA15B /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FCB1FCF233E000DA15B /* VideosVC.swift */; };
 		E2AA7FCE1FCF234E000DA15B /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */; };
@@ -39,6 +44,9 @@
 /* Begin PBXFileReference section */
 		80A2163F237C067DB9284CC0 /* Pods-Surf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Surf/Pods-Surf.debug.xcconfig"; sourceTree = "<group>"; };
 		BC63A9AB88415624EAA4EC4C /* Pods-Surf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surf.release.xcconfig"; path = "Pods/Target Support Files/Pods-Surf/Pods-Surf.release.xcconfig"; sourceTree = "<group>"; };
+		E24730F81FD180CB00513F91 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E24730FA1FD1867D00513F91 /* MyMediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaVC.swift; sourceTree = "<group>"; };
+		E24730FC1FD1869600513F91 /* MyChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelsVC.swift; sourceTree = "<group>"; };
 		E25DECE21FCE672100AA372C /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DECE51FCE672100AA372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DECEA1FCE672100AA372C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		E25DED141FCE756B00AA372C /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		E25DED241FCE75D600AA372C /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		E25DED261FCE75E700AA372C /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		E2647B5D1FD0FF4A0055FEF8 /* ChildExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildExampleViewController.swift; sourceTree = "<group>"; };
+		E2647B5E1FD0FF4A0055FEF8 /* TableChildExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableChildExampleViewController.swift; sourceTree = "<group>"; };
 		E2AA7FC91FCF2327000DA15B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E2AA7FCB1FCF233E000DA15B /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
 		E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
@@ -139,6 +149,7 @@
 		E25DECF71FCE747100AA372C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2647B5C1FD0FF4A0055FEF8 /* ChildControllers */,
 				E25DED241FCE75D600AA372C /* SigninVC.swift */,
 				E25DED261FCE75E700AA372C /* SignupVC.swift */,
 				E2AA7FC91FCF2327000DA15B /* HomeVC.swift */,
@@ -146,6 +157,9 @@
 				E2AA7FCD1FCF234E000DA15B /* ChannelsVC.swift */,
 				E2AA7FCF1FCF235F000DA15B /* DiscoverVC.swift */,
 				E2AA7FD11FCF2370000DA15B /* AccountVC.swift */,
+				E24730F81FD180CB00513F91 /* SettingsVC.swift */,
+				E24730FA1FD1867D00513F91 /* MyMediaVC.swift */,
+				E24730FC1FD1869600513F91 /* MyChannelsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,6 +268,15 @@
 				E25DED101FCE756B00AA372C /* UIView+Border.m */,
 			);
 			path = "UIView+Border";
+			sourceTree = "<group>";
+		};
+		E2647B5C1FD0FF4A0055FEF8 /* ChildControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2647B5D1FD0FF4A0055FEF8 /* ChildExampleViewController.swift */,
+				E2647B5E1FD0FF4A0055FEF8 /* TableChildExampleViewController.swift */,
+			);
+			path = ChildControllers;
 			sourceTree = "<group>";
 		};
 		E2B0F9601FCEE0210000A978 /* Resources */ = {
@@ -380,7 +403,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Surf/Pods-Surf-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -404,6 +427,8 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -413,6 +438,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,14 +466,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24730FD1FD1869600513F91 /* MyChannelsVC.swift in Sources */,
 				E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */,
 				E25DED191FCE756B00AA372C /* UIColor+HexString.m in Sources */,
+				E2647B5F1FD0FF4A0055FEF8 /* ChildExampleViewController.swift in Sources */,
 				E25DED1A1FCE756B00AA372C /* UIImage+CS_Extensions.m in Sources */,
 				E2AA7FD01FCF235F000DA15B /* DiscoverVC.swift in Sources */,
 				E25DED1F1FCE756B00AA372C /* UIView+Dimension.swift in Sources */,
 				E2AA7FCA1FCF2327000DA15B /* HomeVC.swift in Sources */,
 				E2AA7FCE1FCF234E000DA15B /* ChannelsVC.swift in Sources */,
+				E24730FB1FD1867D00513F91 /* MyMediaVC.swift in Sources */,
 				E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */,
+				E24730F91FD180CB00513F91 /* SettingsVC.swift in Sources */,
 				E2AA7FCC1FCF233E000DA15B /* VideosVC.swift in Sources */,
 				E25DED211FCE756B00AA372C /* UIView+Layer.swift in Sources */,
 				E25DED271FCE75E700AA372C /* SignupVC.swift in Sources */,
@@ -454,6 +485,7 @@
 				E25DED1E1FCE756B00AA372C /* UIView+Border.m in Sources */,
 				E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */,
 				E25DED201FCE756B00AA372C /* UIView+Gradient.swift in Sources */,
+				E2647B601FD0FF4A0055FEF8 /* TableChildExampleViewController.swift in Sources */,
 				E2AA7FD21FCF2370000DA15B /* AccountVC.swift in Sources */,
 				E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */,
 			);

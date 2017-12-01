@@ -8,6 +8,9 @@ target 'Surf' do
   # Pods for Surf
   pod 'PKHUD', '~> 5.0'
   pod 'IQKeyboardManager'
+  
+  # Caching
+  pod 'SDWebImage'
 
   # Http Request and Response
   pod 'Alamofire'
@@ -15,6 +18,9 @@ target 'Surf' do
   # Facebook
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
+  
+  # Top TabBar
+  pod 'XLPagerTabStrip', '~> 8.0'
   
   # HockeySDK
   pod 'HockeySDK', '~> 5.0.0'
