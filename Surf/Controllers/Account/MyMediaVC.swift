@@ -96,6 +96,6 @@ class MyMediaVC: UITableViewController, IndicatorInfoProvider {
     */
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "MY CHANNELS"
+        return "MY MEDIA"
     }
 }

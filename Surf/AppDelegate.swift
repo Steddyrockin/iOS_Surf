@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do some additional configuration if needed here
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()
-
+        
+        RunLoop.current.run(until: NSDate(timeIntervalSinceNow: 2) as Date)
+        
         return true
     }
 

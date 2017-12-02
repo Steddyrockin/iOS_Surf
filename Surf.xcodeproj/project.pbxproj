@@ -40,6 +40,11 @@
 		E2B0F96B1FCEE0220000A978 /* texgyreadventor-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9651FCEE0210000A978 /* texgyreadventor-bolditalic.otf */; };
 		E2B0F96C1FCEE0220000A978 /* texgyreadventor-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9661FCEE0210000A978 /* texgyreadventor-italic.otf */; };
 		E2B0F96D1FCEE0220000A978 /* texgyreadventor-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0F9671FCEE0210000A978 /* texgyreadventor-regular.otf */; };
+		E2C7833F1FD25999007D8777 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7833E1FD25999007D8777 /* SearchVC.swift */; };
+		E2C783411FD259B8007D8777 /* ChannelsBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783401FD259B8007D8777 /* ChannelsBarVC.swift */; };
+		E2C783431FD259CF007D8777 /* VideosBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783421FD259CF007D8777 /* VideosBarVC.swift */; };
+		E2C783451FD259E8007D8777 /* PhotosBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783441FD259E8007D8777 /* PhotosBarVC.swift */; };
+		E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783461FD259FD007D8777 /* StoriesBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +87,11 @@
 		E2B0F9651FCEE0210000A978 /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
 		E2B0F9661FCEE0210000A978 /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
 		E2B0F9671FCEE0210000A978 /* texgyreadventor-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-regular.otf"; sourceTree = "<group>"; };
+		E2C7833E1FD25999007D8777 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		E2C783401FD259B8007D8777 /* ChannelsBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsBarVC.swift; sourceTree = "<group>"; };
+		E2C783421FD259CF007D8777 /* VideosBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosBarVC.swift; sourceTree = "<group>"; };
+		E2C783441FD259E8007D8777 /* PhotosBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosBarVC.swift; sourceTree = "<group>"; };
+		E2C783461FD259FD007D8777 /* StoriesBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesBarVC.swift; sourceTree = "<group>"; };
 		E4206082346F7E208796E760 /* Pods_Surf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,6 +216,7 @@
 		E25DECF71FCE747100AA372C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2C7833D1FD25983007D8777 /* Search */,
 				E24731091FD1CB6C00513F91 /* Account */,
 				E24731001FD1CB6C00513F91 /* Auth */,
 				E24730FE1FD1CB6C00513F91 /* Channels */,
@@ -341,6 +352,18 @@
 				E2B0F9671FCEE0210000A978 /* texgyreadventor-regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E2C7833D1FD25983007D8777 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E2C7833E1FD25999007D8777 /* SearchVC.swift */,
+				E2C783401FD259B8007D8777 /* ChannelsBarVC.swift */,
+				E2C783421FD259CF007D8777 /* VideosBarVC.swift */,
+				E2C783441FD259E8007D8777 /* PhotosBarVC.swift */,
+				E2C783461FD259FD007D8777 /* StoriesBarVC.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,16 +532,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C7833F1FD25999007D8777 /* SearchVC.swift in Sources */,
 				E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */,
 				E247311B1FD1CC5D00513F91 /* GalleryBarVC.swift in Sources */,
 				E24731111FD1CB6C00513F91 /* DiscoverVC.swift in Sources */,
 				E25DED191FCE756B00AA372C /* UIColor+HexString.m in Sources */,
 				E25DED1A1FCE756B00AA372C /* UIImage+CS_Extensions.m in Sources */,
+				E2C783431FD259CF007D8777 /* VideosBarVC.swift in Sources */,
 				E25DED1F1FCE756B00AA372C /* UIView+Dimension.swift in Sources */,
+				E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */,
 				E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */,
 				E24731121FD1CB6C00513F91 /* HomeVC.swift in Sources */,
 				E25DED211FCE756B00AA372C /* UIView+Layer.swift in Sources */,
 				E24731161FD1CB6C00513F91 /* MyMediaVC.swift in Sources */,
+				E2C783411FD259B8007D8777 /* ChannelsBarVC.swift in Sources */,
 				E24731171FD1CB6C00513F91 /* SettingsVC.swift in Sources */,
 				E24731101FD1CB6C00513F91 /* SignupVC.swift in Sources */,
 				E25DED1E1FCE756B00AA372C /* UIView+Border.m in Sources */,
@@ -530,6 +557,7 @@
 				E24731141FD1CB6C00513F91 /* AccountVC.swift in Sources */,
 				E24731191FD1CC3200513F91 /* DiscoverBarVC.swift in Sources */,
 				E247311D1FD1CCA300513F91 /* StoryBarVC.swift in Sources */,
+				E2C783451FD259E8007D8777 /* PhotosBarVC.swift in Sources */,
 				E24731151FD1CB6C00513F91 /* MyChannelsVC.swift in Sources */,
 				E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */,
 			);

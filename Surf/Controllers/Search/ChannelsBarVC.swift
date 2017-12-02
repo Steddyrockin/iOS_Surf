@@ -1,16 +1,15 @@
 //
-//  MyChannelsVC.swift
+//  ChannelsBarVC.swift
 //  Surf
 //
-//  Created by Liming on 01/12/2017.
+//  Created by Liming on 02/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
-import XLPagerTabStrip
 
-class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
-    
+class ChannelsBarVC: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +18,6 @@ class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.tableView.backgroundColor = .clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,23 +29,23 @@ class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 0
     }
 
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mychannelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -94,8 +91,5 @@ class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "MY CHANNELS"
-    }
+
 }

@@ -18,12 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="surf_logo" translatesAutoresizingMaskIntoConstraints="NO" id="L7y-bK-8KX">
-                                <rect key="frame" x="56" y="290" width="262" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="surf_logo" translatesAutoresizingMaskIntoConstraints="NO" id="L7y-bK-8KX">
+                                <rect key="frame" x="45.5" y="290" width="283" height="86"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.17737281322479248" blue="0.11190526932477951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L7y-bK-8KX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="L4g-jT-8Yg"/>
+                            <constraint firstItem="L7y-bK-8KX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r0y-Tf-LZw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
