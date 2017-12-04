@@ -23,7 +23,6 @@
 		E247311D1FD1CCA300513F91 /* StoryBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247311C1FD1CCA300513F91 /* StoryBarVC.swift */; };
 		E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECE51FCE672100AA372C /* AppDelegate.swift */; };
 		E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECE91FCE672100AA372C /* Main.storyboard */; };
-		E25DECED1FCE672100AA372C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25DECEC1FCE672100AA372C /* Assets.xcassets */; };
 		E25DECF01FCE672100AA372C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECEE1FCE672100AA372C /* LaunchScreen.storyboard */; };
 		E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECFC1FCE756B00AA372C /* Double+Randomization.swift */; };
 		E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECFE1FCE756B00AA372C /* String+Localization.swift */; };
@@ -45,6 +44,7 @@
 		E2C783431FD259CF007D8777 /* VideosBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783421FD259CF007D8777 /* VideosBarVC.swift */; };
 		E2C783451FD259E8007D8777 /* PhotosBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783441FD259E8007D8777 /* PhotosBarVC.swift */; };
 		E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783461FD259FD007D8777 /* StoriesBarVC.swift */; };
+		E2D1EC991FD4F094003C4399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D1EC981FD4F091003C4399 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,6 @@
 		E25DECE21FCE672100AA372C /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DECE51FCE672100AA372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DECEA1FCE672100AA372C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E25DECEC1FCE672100AA372C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E25DECEF1FCE672100AA372C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E25DECF11FCE672100AA372C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E25DECFC1FCE756B00AA372C /* Double+Randomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Randomization.swift"; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		E2C783421FD259CF007D8777 /* VideosBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosBarVC.swift; sourceTree = "<group>"; };
 		E2C783441FD259E8007D8777 /* PhotosBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosBarVC.swift; sourceTree = "<group>"; };
 		E2C783461FD259FD007D8777 /* StoriesBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesBarVC.swift; sourceTree = "<group>"; };
+		E2D1EC981FD4F091003C4399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4206082346F7E208796E760 /* Pods_Surf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,8 +205,8 @@
 				E25DECF71FCE747100AA372C /* Controllers */,
 				E25DECF81FCE747100AA372C /* Models */,
 				E25DECE51FCE672100AA372C /* AppDelegate.swift */,
+				E2D1EC981FD4F091003C4399 /* Assets.xcassets */,
 				E25DECE91FCE672100AA372C /* Main.storyboard */,
-				E25DECEC1FCE672100AA372C /* Assets.xcassets */,
 				E25DECEE1FCE672100AA372C /* LaunchScreen.storyboard */,
 				E25DECF11FCE672100AA372C /* Info.plist */,
 			);
@@ -432,11 +432,11 @@
 				E2B0F9691FCEE0220000A978 /* Brandon_reg.otf in Resources */,
 				E25DECF01FCE672100AA372C /* LaunchScreen.storyboard in Resources */,
 				E2B0F96A1FCEE0220000A978 /* texgyreadventor-bold.otf in Resources */,
-				E25DECED1FCE672100AA372C /* Assets.xcassets in Resources */,
 				E2B0F9681FCEE0220000A978 /* Brandon_blk.otf in Resources */,
 				E2B0F96B1FCEE0220000A978 /* texgyreadventor-bolditalic.otf in Resources */,
 				E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */,
 				E2B0F96D1FCEE0220000A978 /* texgyreadventor-regular.otf in Resources */,
+				E2D1EC991FD4F094003C4399 /* Assets.xcassets in Resources */,
 				E2B0F96C1FCEE0220000A978 /* texgyreadventor-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

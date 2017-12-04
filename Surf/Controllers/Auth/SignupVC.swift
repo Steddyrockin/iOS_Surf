@@ -197,6 +197,8 @@ UINavigationControllerDelegate {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //save image
             //display image
+            
+            self.photoBtn.imageView?.contentMode = UIViewContentMode.scaleAspectFill
             self.photoBtn.setImage(image, for: UIControlState.normal)
         }
         
