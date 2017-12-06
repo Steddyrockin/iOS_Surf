@@ -20,6 +20,7 @@ UINavigationControllerDelegate  {
     
     override func viewDidLoad() {
    
+        self.settings.style.buttonBarHeight = 30
         self.settings.style.buttonBarTop = 256
         self.settings.style.selectedBarHeight = 3
         self.settings.style.selectedBarBackgroundColor = UIColor.white

@@ -9,18 +9,18 @@
 import UIKit
 import XLPagerTabStrip
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "galleryCell"
 
-class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider  {
+class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        self.collectionView?.backgroundColor = .clear
+        //self.collectionView?.backgroundColor = .clear
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -44,13 +44,13 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider  {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 20
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,6 +59,14 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider  {
         // Configure the cell
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.width/2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 
     // MARK: UICollectionViewDelegate

@@ -15,7 +15,8 @@ class DiscoverVC: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         
-        self.settings.style.buttonBarTop = 40
+        self.settings.style.buttonBarHeight = 30
+        self.settings.style.buttonBarTop = 60
         self.settings.style.selectedBarHeight = 3
         self.settings.style.selectedBarBackgroundColor = UIColor.white
         self.settings.style.buttonBarBackgroundColor = UIColor.clear

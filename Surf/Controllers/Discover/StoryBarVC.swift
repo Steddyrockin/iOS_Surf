@@ -9,13 +9,16 @@
 import UIKit
 import XLPagerTabStrip
 
-class StoryBarVC: UIViewController, IndicatorInfoProvider  {
-
+class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .clear
+        self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,22 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider  {
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return "STORIES"
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cellId = "storyCell"
+    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: UIScreen.main.bounds.size.width, height: self.collectionView.bounds.size.height)
     }
 
 }
