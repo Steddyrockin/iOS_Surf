@@ -18,7 +18,7 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+        // self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +55,20 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: UIScreen.main.bounds.size.width, height: self.collectionView.bounds.size.height)
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+        storyVC?.tabBarItem = vcs![2].tabBarItem
+        vcs![2] = storyVC!
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 2
     }
 
 }

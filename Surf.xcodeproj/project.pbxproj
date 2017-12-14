@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		62CC53527AABC4D51A81CDFD /* Pods_Surf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4206082346F7E208796E760 /* Pods_Surf.framework */; };
+		E20B6AA61FDB5DC800614A43 /* VideoPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B6AA51FDB5DC800614A43 /* VideoPlayVC.swift */; };
+		E20B6AA81FDB868F00614A43 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B6AA71FDB868F00614A43 /* RootVC.swift */; };
+		E21FCD361FDE1E47006CE0BB /* StoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21FCD351FDE1E47006CE0BB /* StoryVC.swift */; };
+		E21FCD381FDE1E67006CE0BB /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21FCD371FDE1E67006CE0BB /* PhotoVC.swift */; };
+		E2259E171FDED7B1005F0FAA /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2259E161FDED7B1005F0FAA /* GalleryCell.swift */; };
 		E22925441FD5863800B831F6 /* FeaturedBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925431FD5863800B831F6 /* FeaturedBarVC.swift */; };
 		E22925481FD5868F00B831F6 /* LiveBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925471FD5868F00B831F6 /* LiveBarVC.swift */; };
 		E229254A1FD586A200B831F6 /* ReleaseBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925491FD586A200B831F6 /* ReleaseBarVC.swift */; };
@@ -24,6 +29,7 @@
 		E24731191FD1CC3200513F91 /* DiscoverBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731181FD1CC3200513F91 /* DiscoverBarVC.swift */; };
 		E247311B1FD1CC5D00513F91 /* GalleryBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247311A1FD1CC5D00513F91 /* GalleryBarVC.swift */; };
 		E247311D1FD1CCA300513F91 /* StoryBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247311C1FD1CCA300513F91 /* StoryBarVC.swift */; };
+		E251A2481FDBE29F00656D74 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251A2471FDBE29F00656D74 /* Global.swift */; };
 		E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECE51FCE672100AA372C /* AppDelegate.swift */; };
 		E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECE91FCE672100AA372C /* Main.storyboard */; };
 		E25DECF01FCE672100AA372C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECEE1FCE672100AA372C /* LaunchScreen.storyboard */; };
@@ -53,6 +59,11 @@
 /* Begin PBXFileReference section */
 		80A2163F237C067DB9284CC0 /* Pods-Surf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Surf/Pods-Surf.debug.xcconfig"; sourceTree = "<group>"; };
 		BC63A9AB88415624EAA4EC4C /* Pods-Surf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surf.release.xcconfig"; path = "Pods/Target Support Files/Pods-Surf/Pods-Surf.release.xcconfig"; sourceTree = "<group>"; };
+		E20B6AA51FDB5DC800614A43 /* VideoPlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayVC.swift; sourceTree = "<group>"; };
+		E20B6AA71FDB868F00614A43 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		E21FCD351FDE1E47006CE0BB /* StoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryVC.swift; sourceTree = "<group>"; };
+		E21FCD371FDE1E67006CE0BB /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		E2259E161FDED7B1005F0FAA /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		E22925431FD5863800B831F6 /* FeaturedBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedBarVC.swift; sourceTree = "<group>"; };
 		E22925471FD5868F00B831F6 /* LiveBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBarVC.swift; sourceTree = "<group>"; };
 		E22925491FD586A200B831F6 /* ReleaseBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseBarVC.swift; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 		E24731181FD1CC3200513F91 /* DiscoverBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBarVC.swift; sourceTree = "<group>"; };
 		E247311A1FD1CC5D00513F91 /* GalleryBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryBarVC.swift; sourceTree = "<group>"; };
 		E247311C1FD1CCA300513F91 /* StoryBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBarVC.swift; sourceTree = "<group>"; };
+		E251A2471FDBE29F00656D74 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E25DECE21FCE672100AA372C /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DECE51FCE672100AA372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25DECEA1FCE672100AA372C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +166,9 @@
 				E24731181FD1CC3200513F91 /* DiscoverBarVC.swift */,
 				E247311A1FD1CC5D00513F91 /* GalleryBarVC.swift */,
 				E247311C1FD1CCA300513F91 /* StoryBarVC.swift */,
+				E21FCD351FDE1E47006CE0BB /* StoryVC.swift */,
+				E21FCD371FDE1E67006CE0BB /* PhotoVC.swift */,
+				E2259E161FDED7B1005F0FAA /* GalleryCell.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -173,6 +188,7 @@
 				E22925431FD5863800B831F6 /* FeaturedBarVC.swift */,
 				E22925471FD5868F00B831F6 /* LiveBarVC.swift */,
 				E22925491FD586A200B831F6 /* ReleaseBarVC.swift */,
+				E20B6AA51FDB5DC800614A43 /* VideoPlayVC.swift */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -232,6 +248,7 @@
 				E24731031FD1CB6C00513F91 /* Discover */,
 				E24731051FD1CB6C00513F91 /* Home */,
 				E24731071FD1CB6C00513F91 /* Videos */,
+				E20B6AA71FDB868F00614A43 /* RootVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +256,7 @@
 		E25DECF81FCE747100AA372C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E251A2471FDBE29F00656D74 /* Global.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,10 +562,12 @@
 				E2C7833F1FD25999007D8777 /* SearchVC.swift in Sources */,
 				E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */,
 				E247311B1FD1CC5D00513F91 /* GalleryBarVC.swift in Sources */,
+				E21FCD361FDE1E47006CE0BB /* StoryVC.swift in Sources */,
 				E24731111FD1CB6C00513F91 /* DiscoverVC.swift in Sources */,
 				E22925481FD5868F00B831F6 /* LiveBarVC.swift in Sources */,
 				E25DED191FCE756B00AA372C /* UIColor+HexString.m in Sources */,
 				E25DED1A1FCE756B00AA372C /* UIImage+CS_Extensions.m in Sources */,
+				E2259E171FDED7B1005F0FAA /* GalleryCell.swift in Sources */,
 				E2C783431FD259CF007D8777 /* VideosBarVC.swift in Sources */,
 				E25DED1F1FCE756B00AA372C /* UIView+Dimension.swift in Sources */,
 				E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */,
@@ -557,8 +577,11 @@
 				E24731161FD1CB6C00513F91 /* MyMediaVC.swift in Sources */,
 				E2C783411FD259B8007D8777 /* ChannelsBarVC.swift in Sources */,
 				E24731171FD1CB6C00513F91 /* SettingsVC.swift in Sources */,
+				E251A2481FDBE29F00656D74 /* Global.swift in Sources */,
 				E24731101FD1CB6C00513F91 /* SignupVC.swift in Sources */,
 				E229254A1FD586A200B831F6 /* ReleaseBarVC.swift in Sources */,
+				E20B6AA81FDB868F00614A43 /* RootVC.swift in Sources */,
+				E20B6AA61FDB5DC800614A43 /* VideoPlayVC.swift in Sources */,
 				E25DED1E1FCE756B00AA372C /* UIView+Border.m in Sources */,
 				E247310E1FD1CB6C00513F91 /* ChannelsVC.swift in Sources */,
 				E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */,
@@ -572,6 +595,7 @@
 				E24731151FD1CB6C00513F91 /* MyChannelsVC.swift in Sources */,
 				E22925441FD5863800B831F6 /* FeaturedBarVC.swift in Sources */,
 				E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */,
+				E21FCD381FDE1E67006CE0BB /* PhotoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

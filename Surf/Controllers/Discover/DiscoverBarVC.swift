@@ -37,18 +37,43 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 3
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell", for: indexPath)
-
+        var cell = UITableViewCell()
+        
+        if indexPath.row == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell0", for: indexPath)
+        }
+        
+        if indexPath.row == 1 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell1", for: indexPath)
+        }
+        
+        if indexPath.row == 2 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell2", for: indexPath)
+        }
         // Configure the cell...
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 355
+        }
+        
+        else if indexPath.row == 1 {
+            return 182
+        }
+        
+        else {
+            return 172
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

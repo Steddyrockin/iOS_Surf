@@ -16,18 +16,22 @@ class VideosVC: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         
         self.settings.style.buttonBarHeight = 30
-        self.settings.style.buttonBarTop = 60
+        self.settings.style.buttonBarTop = 40
         self.settings.style.selectedBarHeight = 3
         self.settings.style.selectedBarBackgroundColor = UIColor.white
         self.settings.style.buttonBarBackgroundColor = UIColor.clear
         self.settings.style.buttonBarItemBackgroundColor = UIColor.clear
         self.settings.style.buttonBarMinimumInteritemSpacing = 0
         self.settings.style.buttonBarItemTitleColor = UIColor.white
-        self.settings.style.buttonBarItemFont = UIFont.init(name: "Brandon Grotesque", size: 8)!
+        
+        let preferredDescriptor = UIFont.preferredFont(forTextStyle: UIFontTextStyle.init("Black")).withSize(8)
+
+        self.settings.style.buttonBarItemFont = UIFont.init(name: "Brandon Grotesque", size: preferredDescriptor.pointSize)!
         
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        Global.sharedInstance.videoPlayed = false
         self.buttonBarView.backgroundColor = UIColor.clear
     }
 

@@ -13,6 +13,8 @@ private let reuseIdentifier = "galleryCell"
 
 class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollectionViewDelegateFlowLayout {
 
+    var visibleIndex : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,7 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +57,11 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
+        
+        if indexPath.row > visibleIndex + 1 {
+            cell.gradientImg.isHidden = true
+        }
     
         // Configure the cell
     
@@ -71,6 +78,11 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoVC")
+        photoVC?.modalPresentationStyle = .overCurrentContext
+        self.present(photoVC!, animated: true, completion: nil)
+    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

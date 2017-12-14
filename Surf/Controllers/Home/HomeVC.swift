@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,6 +16,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tabBarController?.tabBar.clipsToBounds = true
         self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
     }
 
@@ -24,7 +25,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -69,5 +69,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize.init(width: self.collectionView.bounds.size.width, height: self.collectionView.bounds.size.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
     
 }

@@ -49,6 +49,16 @@ class ReleaseBarVC: UITableViewController, IndicatorInfoProvider {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC")
+        playerVC?.tabBarItem = vcs![1].tabBarItem
+        vcs![1] = playerVC!
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 1
+    }
 
     /*
     // Override to support conditional editing of the table view.
