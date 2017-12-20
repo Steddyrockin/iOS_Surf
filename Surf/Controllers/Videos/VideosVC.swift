@@ -41,6 +41,11 @@ class VideosVC: ButtonBarPagerTabStripViewController {
     }
     
 
+    @IBAction func searchAction(_ sender: UIButton) {
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")
+        searchVC?.modalPresentationStyle = .overCurrentContext
+        self.present(searchVC!, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

@@ -21,6 +21,12 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.tableView.backgroundColor = .clear
+        
+        let gradientLayer = CALayer()
+        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +51,10 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
         var cell = UITableViewCell()
         
         if indexPath.row == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell0", for: indexPath)
+            let discoverCell = tableView.dequeueReusableCell(withIdentifier: "discoverCell0", for: indexPath) as! DiscoverCell
+            discoverCell.presentCtrl = self
+            
+            cell = discoverCell
         }
         
         if indexPath.row == 1 {
@@ -73,6 +82,29 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
             return 172
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let photoVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoVC")
+            photoVC?.modalPresentationStyle = .overCurrentContext
+            self.present(photoVC!, animated: true, completion: nil)
+        }
+            
+        else if indexPath.row == 1 {
+            
+        }
+            
+        else {
+            var vcs = self.tabBarController?.childViewControllers
+            
+            let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+            storyVC?.tabBarItem = vcs![2].tabBarItem
+            vcs![2] = storyVC!
+            
+            self.tabBarController?.setViewControllers(vcs, animated: false)
+            self.tabBarController?.selectedIndex = 2
+        }
     }
 
     /*
@@ -121,6 +153,6 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
     */
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "DISCOVER"
+        return "D I S C O V E R"
     }
 }

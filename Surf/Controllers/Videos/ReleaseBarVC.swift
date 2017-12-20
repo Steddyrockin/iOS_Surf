@@ -52,14 +52,23 @@ class ReleaseBarVC: UITableViewController, IndicatorInfoProvider {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var vcs = self.tabBarController?.childViewControllers
         
-        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC")
-        playerVC?.tabBarItem = vcs![1].tabBarItem
-        vcs![1] = playerVC!
+        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
+        playerVC.fromIndex = 2
+        playerVC.tabBarItem = vcs![1].tabBarItem
+        vcs![1] = playerVC
         
         self.tabBarController?.setViewControllers(vcs, animated: false)
         self.tabBarController?.selectedIndex = 1
     }
 
+    @IBAction func likeAction(_ sender: UIButton) {
+        if sender.imageView?.image == #imageLiteral(resourceName: "like_sel"){
+            sender.imageView?.image = #imageLiteral(resourceName: "like")
+        }
+        else {
+            sender.imageView?.image = #imageLiteral(resourceName: "like_sel")
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -106,6 +115,6 @@ class ReleaseBarVC: UITableViewController, IndicatorInfoProvider {
     */
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "NEW RELEASES"
+        return "N E W  R E L E A S E S"
     }
 }

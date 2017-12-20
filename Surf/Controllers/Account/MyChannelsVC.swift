@@ -61,6 +61,10 @@ class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
         return headerView
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tabBarController?.selectedIndex = 3
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -107,6 +111,6 @@ class MyChannelsVC: UITableViewController, IndicatorInfoProvider {
     */
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "MY CHANNELS"
+        return "M Y  C H A N N E L S"
     }
 }

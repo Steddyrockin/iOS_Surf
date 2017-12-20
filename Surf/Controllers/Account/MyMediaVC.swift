@@ -67,6 +67,35 @@ class MyMediaVC: UITableViewController, IndicatorInfoProvider {
     }
     
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            var vcs = self.tabBarController?.childViewControllers
+            
+            let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC")
+            playerVC?.tabBarItem = vcs![1].tabBarItem
+            vcs![1] = playerVC!
+            
+            self.tabBarController?.setViewControllers(vcs, animated: false)
+            self.tabBarController?.selectedIndex = 1
+        }
+            
+        else if indexPath.row == 1 {
+            let photoVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoVC")
+            photoVC?.modalPresentationStyle = .overCurrentContext
+            self.present(photoVC!, animated: true, completion: nil)
+        }
+            
+        else {
+            var vcs = self.tabBarController?.childViewControllers
+            
+            let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+            storyVC?.tabBarItem = vcs![2].tabBarItem
+            vcs![2] = storyVC!
+            
+            self.tabBarController?.setViewControllers(vcs, animated: false)
+            self.tabBarController?.selectedIndex = 2
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -113,6 +142,6 @@ class MyMediaVC: UITableViewController, IndicatorInfoProvider {
     */
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "MY MEDIA"
+        return "M Y  M E D I A"
     }
 }

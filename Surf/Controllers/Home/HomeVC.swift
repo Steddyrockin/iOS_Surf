@@ -11,6 +11,7 @@ import UIKit
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var likeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,5 +74,13 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return 0
     }
 
+    @IBAction func searchAction(_ sender: UIButton) {
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")
+        searchVC?.modalPresentationStyle = .overCurrentContext
+        self.present(searchVC!, animated: true, completion: nil)
+    }
     
+    @IBAction func likeAction(_ sender: UIButton) {
+        
+    }
 }

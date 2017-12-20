@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class VideosBarVC: UITableViewController {
+class VideosBarVC: UITableViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,46 @@ class VideosBarVC: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 8
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "liveCell", for: indexPath)
+        
+        // Configure the cell...
+        
+        return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
+        playerVC.fromIndex = 1
+        playerVC.tabBarItem = vcs![1].tabBarItem
+        vcs![1] = playerVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 1
+    }
+    
+    @IBAction func likeAction(_ sender: UIButton) {
+        if sender.imageView?.image == #imageLiteral(resourceName: "like_sel"){
+            sender.imageView?.image = #imageLiteral(resourceName: "like")
+        }
+        else {
+            sender.imageView?.image = #imageLiteral(resourceName: "like_sel")
+        }
     }
 
     /*
@@ -92,4 +124,7 @@ class VideosBarVC: UITableViewController {
     }
     */
 
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "V I D E O S"
+    }
 }

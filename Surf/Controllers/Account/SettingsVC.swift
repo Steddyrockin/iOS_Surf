@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class SettingsVC: UIViewController, IndicatorInfoProvider {
     
-    var itemInfo: IndicatorInfo = "SETTINGS"
+    var itemInfo: IndicatorInfo = "S E T T I N G S"
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return self.itemInfo

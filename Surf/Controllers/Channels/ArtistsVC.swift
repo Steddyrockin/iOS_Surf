@@ -1,35 +1,30 @@
 //
-//  GalleryBarVC.swift
+//  ArtistsVC.swift
 //  Surf
 //
-//  Created by Liming on 02/12/2017.
+//  Created by Liming on 19/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-private let reuseIdentifier = "galleryCell"
+private let reuseIdentifier = "artistsCell"
 
-class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollectionViewDelegateFlowLayout {
-
-    var visibleIndex : Int = 0
+class ArtistsVC: UICollectionViewController, IndicatorInfoProvider {
+    
+    var type : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        //self.collectionView?.backgroundColor = .clear
+
         // Register cell classes
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        let gradientLayer = CALayer()
-        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,32 +52,19 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 20
+        return 10
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    
         // Configure the cell
     
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.width/2)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoVC")
-        photoVC?.modalPresentationStyle = .overCurrentContext
-        self.present(photoVC!, animated: true, completion: nil)
-    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -111,8 +93,16 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
     
     }
     */
-    
+
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "G A L L E R I E S"
+        if self.type == 0 {
+            return "F E A T U R E D"
+        }
+        else  if self.type == 1 {
+            return "A R T I S T S"
+        }
+        else {
+            return "S E R I E S"
+        }
     }
 }

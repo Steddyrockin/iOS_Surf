@@ -10,7 +10,6 @@ import UIKit
 
 class GalleryCell: UICollectionViewCell {
     @IBOutlet weak var backImg: UIImageView!
-    @IBOutlet weak var gradientImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
     
 }

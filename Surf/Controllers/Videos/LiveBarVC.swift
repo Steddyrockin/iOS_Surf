@@ -53,12 +53,22 @@ class LiveBarVC: UITableViewController, IndicatorInfoProvider {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var vcs = self.tabBarController?.childViewControllers
         
-        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC")
-        playerVC?.tabBarItem = vcs![1].tabBarItem
-        vcs![1] = playerVC!
+        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
+        playerVC.fromIndex = 1
+        playerVC.tabBarItem = vcs![1].tabBarItem
+        vcs![1] = playerVC
         
         self.tabBarController?.setViewControllers(vcs, animated: false)
         self.tabBarController?.selectedIndex = 1
+    }
+    
+    @IBAction func likeAction(_ sender: UIButton) {
+        if sender.imageView?.image == #imageLiteral(resourceName: "like_sel"){
+            sender.imageView?.image = #imageLiteral(resourceName: "like")
+        }
+        else {
+            sender.imageView?.image = #imageLiteral(resourceName: "like_sel")
+        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -106,6 +116,6 @@ class LiveBarVC: UITableViewController, IndicatorInfoProvider {
     */
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "LIVE"
+        return "L I V E"
     }
 }

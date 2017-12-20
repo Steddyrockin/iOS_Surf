@@ -12,6 +12,7 @@ import XLPagerTabStrip
 class DiscoverVC: ButtonBarPagerTabStripViewController {
 
     var isReload = false
+    var subIndex : Int = 0
     
     override func viewDidLoad() {
         
@@ -29,11 +30,25 @@ class DiscoverVC: ButtonBarPagerTabStripViewController {
 
         // Do any additional setup after loading the view.
         self.buttonBarView.backgroundColor = UIColor.clear
+        
+        self.moveToViewController(at: subIndex)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func searchAction(_ sender: UIButton) {
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")
+        searchVC?.modalPresentationStyle = .overCurrentContext
+        self.present(searchVC!, animated: true, completion: nil)
     }
     
     // MARK: - PagerTabStripDataSource

@@ -19,6 +19,11 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
 
         // Do any additional setup after loading the view.
         // self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+        let gradientLayer = CALayer()
+        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,10 +41,6 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "STORIES"
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
@@ -71,4 +72,8 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
         self.tabBarController?.selectedIndex = 2
     }
 
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "S T O R I E S"
+    }
 }

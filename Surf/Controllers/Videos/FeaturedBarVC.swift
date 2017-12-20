@@ -45,7 +45,6 @@ class FeaturedBarVC: UITableViewController, IndicatorInfoProvider {
         let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell", for: indexPath)
 
         // Configure the cell...
-
         return cell
     }
     
@@ -53,16 +52,25 @@ class FeaturedBarVC: UITableViewController, IndicatorInfoProvider {
         
         var vcs = self.tabBarController?.childViewControllers
         
-        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC")
-        playerVC?.tabBarItem = vcs![1].tabBarItem
-        vcs![1] = playerVC!
+        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
+        playerVC.fromIndex = 0
+        playerVC.tabBarItem = vcs![1].tabBarItem
+        vcs![1] = playerVC
         
         self.tabBarController?.setViewControllers(vcs, animated: false)
         self.tabBarController?.selectedIndex = 1
         //self.present(playerVC!, animated: true, completion: nil)
     }
     
-
+    @IBAction func likeAction(_ sender: UIButton) {
+        if sender.imageView?.image == #imageLiteral(resourceName: "like_sel"){
+            sender.imageView?.image = #imageLiteral(resourceName: "like")
+        }
+        else {
+            sender.imageView?.image = #imageLiteral(resourceName: "like_sel")
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -109,6 +117,6 @@ class FeaturedBarVC: UITableViewController, IndicatorInfoProvider {
     */
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "FEATURED"
+        return "F E A T U R E D"
     }
 }

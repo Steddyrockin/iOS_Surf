@@ -40,6 +40,12 @@ UINavigationControllerDelegate  {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func searchAction(_ sender: UIButton) {
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")
+        searchVC?.modalPresentationStyle = .overCurrentContext
+        self.present(searchVC!, animated: true, completion: nil)
+    }
+    
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

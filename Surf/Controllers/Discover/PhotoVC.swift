@@ -17,6 +17,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.pager.numberOfPages = 4
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +25,15 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func pagerControllerChanged(_ sender: UIPageControl) {
+        let pageWidth = self.collectionView.bounds.width
+        
+        let scrollX = pageWidth * CGFloat(self.pager.currentPage)
+        let scrollTo = CGPoint.init(x: scrollX, y: 0)
+        
+        self.collectionView.setContentOffset(scrollTo, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -42,6 +51,11 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth = self.collectionView.bounds.width
+        self.pager.currentPage = Int(self.collectionView.contentOffset.x / pageWidth)
+    }
     /*
     // MARK: - Navigation
 
@@ -56,9 +70,49 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func shareAction(_ sender: UIButton) {
+        // If you want to put an image
+        let image : UIImage = #imageLiteral(resourceName: "dummy_photo2")
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [image], applicationActivities: nil)
+        
+        // This lines is for the popover you need to show in iPad
+        activityViewController.popoverPresentationController?.sourceView = sender
+        
+        // This line remove the arrow of the popover to show in iPad
+        activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.left
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+        
+        // Anything you want to exclude
+        activityViewController.excludedActivityTypes = [
+            UIActivityType.postToWeibo,
+            UIActivityType.print,
+            UIActivityType.assignToContact,
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.addToReadingList,
+            UIActivityType.postToFlickr,
+            UIActivityType.postToVimeo,
+            UIActivityType.postToTencentWeibo,
+            UIActivityType.postToTwitter,
+            UIActivityType.postToFacebook
+        ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func backAction(_ sender: Any) {
+        if self.pager.currentPage > 0 {
+            self.pager.currentPage = self.pager.currentPage - 1
+            self.pagerControllerChanged(self.pager)
+        }
     }
     
     @IBAction func nextAction(_ sender: Any) {
+        if self.pager.currentPage < 4 {
+            self.pager.currentPage = self.pager.currentPage + 1
+            self.pagerControllerChanged(self.pager)
+        }
     }
 }
