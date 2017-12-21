@@ -13,4 +13,5 @@ class Global: NSObject {
     static var sharedInstance = Global()
     
     var videoPlayed : Bool!
+    var preIndex : Int!
 }

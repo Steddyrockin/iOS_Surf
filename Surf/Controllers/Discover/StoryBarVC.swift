@@ -19,11 +19,11 @@ class StoryBarVC: UIViewController, IndicatorInfoProvider, UICollectionViewDataS
 
         // Do any additional setup after loading the view.
         // self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
-        let gradientLayer = CALayer()
-        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.mask = gradientLayer
+//        let gradientLayer = CALayer()
+//        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
+//        gradientLayer.frame = self.view.bounds
+//        
+//        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {

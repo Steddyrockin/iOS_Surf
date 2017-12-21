@@ -1,24 +1,23 @@
 //
-//  HomeVC.swift
+//  TutorialVC.swift
 //  Surf
 //
-//  Created by Liming on 30/11/2017.
+//  Created by Liming on 21/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate {
-    
+class TutorialVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var pager: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tabBarController?.tabBar.clipsToBounds = true
-        self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+        self.pager.numberOfPages = 5
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +25,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Global.sharedInstance.preIndex = 0
+    @IBAction func skipAction(_ sender: UIButton) {
     }
     
     /*
@@ -41,10 +37,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         // Pass the selected object to the new view controller.
     }
     */
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,20 +47,23 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         var cellId = ""
         
         switch indexPath.row {
-        case 0:
-            cellId = "eventCell"
-            break
-        case 1:
-            cellId = "channelCell"
-            break
-        case 2:
-            cellId = "storyCell"
-            break
-        case 3:
-            cellId = "galleryCell"
-            break
-        default:
-            break
+            case 0:
+                cellId = "tutorialCell0"
+                break
+            case 1:
+                cellId = "tutorialCell1"
+                break
+            case 2:
+                cellId = "tutorialCell2"
+                break
+            case 3:
+                cellId = "tutorialCell3"
+                break
+            case 4:
+                cellId = "tutorialCell4"
+                break
+            default:
+                break
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
@@ -80,13 +78,17 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return 0
     }
 
-    @IBAction func searchAction(_ sender: UIButton) {
-        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")
-        searchVC?.modalPresentationStyle = .overCurrentContext
-        self.present(searchVC!, animated: true, completion: nil)
+    @IBAction func pagerControllerChanged(_ sender: UIPageControl) {
+        let pageWidth = self.collectionView.bounds.width
+        
+        let scrollX = pageWidth * CGFloat(self.pager.currentPage)
+        let scrollTo = CGPoint.init(x: scrollX, y: 0)
+        
+        self.collectionView.setContentOffset(scrollTo, animated: true)
     }
     
-    @IBAction func likeAction(_ sender: UIButton) {
-        
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth = self.collectionView.bounds.width
+        self.pager.currentPage = Int(self.collectionView.contentOffset.x / pageWidth)
     }
 }

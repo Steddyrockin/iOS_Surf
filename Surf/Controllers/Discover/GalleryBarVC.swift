@@ -25,11 +25,11 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        let gradientLayer = CALayer()
-        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.mask = gradientLayer
+//        let gradientLayer = CALayer()
+//        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
+//        gradientLayer.frame = self.view.bounds
+//        
+//        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +64,12 @@ class GalleryBarVC: UICollectionViewController, IndicatorInfoProvider , UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
         
         // Configure the cell
+        if (indexPath.row < 2) {
+            cell.maskImg.isHidden = false
+        }
+        else {
+            cell.maskImg.isHidden = true
+        }
     
         return cell
     }

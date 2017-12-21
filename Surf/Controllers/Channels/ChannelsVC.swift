@@ -53,17 +53,13 @@ class ChannelsVC: ButtonBarPagerTabStripViewController {
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_0 = self.storyboard?.instantiateViewController(withIdentifier: "ArtistsVC") as! ArtistsVC
-        child_0.type = 0
         
-        let child_1 = self.storyboard?.instantiateViewController(withIdentifier: "ArtistsVC") as! ArtistsVC
-        child_1.type = 1
-        
-        let child_2 = self.storyboard?.instantiateViewController(withIdentifier: "ArtistsVC") as! ArtistsVC
-        child_2.type = 2
+        let child_0 = self.storyboard?.instantiateViewController(withIdentifier: "FeaturedChannelVC")
+        let child_1 = self.storyboard?.instantiateViewController(withIdentifier: "ArtistsChannelVC")
+        let child_2 = self.storyboard?.instantiateViewController(withIdentifier: "SeriesChannelVC")
         
         guard isReload else {
-            return [child_0, child_1, child_2]
+            return [child_0!, child_1!, child_2!]
         }
         
         var childViewControllers = [child_0, child_1, child_2]
@@ -76,7 +72,7 @@ class ChannelsVC: ButtonBarPagerTabStripViewController {
             }
         }
         let nItems = 1 + (arc4random() % 8)
-        return Array(childViewControllers.prefix(Int(nItems))) as [UIViewController]
+        return Array(childViewControllers.prefix(Int(nItems))) as! [UIViewController]
     }
     
     override func reloadPagerTabStripView() {

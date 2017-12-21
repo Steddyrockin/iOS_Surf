@@ -16,7 +16,6 @@
 		E22925441FD5863800B831F6 /* FeaturedBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925431FD5863800B831F6 /* FeaturedBarVC.swift */; };
 		E22925481FD5868F00B831F6 /* LiveBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925471FD5868F00B831F6 /* LiveBarVC.swift */; };
 		E229254A1FD586A200B831F6 /* ReleaseBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925491FD586A200B831F6 /* ReleaseBarVC.swift */; };
-		E2438B411FE880DA00B8C93F /* ArtistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2438B401FE880DA00B8C93F /* ArtistsVC.swift */; };
 		E247310E1FD1CB6C00513F91 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24730FF1FD1CB6C00513F91 /* ChannelsVC.swift */; };
 		E247310F1FD1CB6C00513F91 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731011FD1CB6C00513F91 /* SigninVC.swift */; };
 		E24731101FD1CB6C00513F91 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731021FD1CB6C00513F91 /* SignupVC.swift */; };
@@ -30,6 +29,12 @@
 		E24731191FD1CC3200513F91 /* DiscoverBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731181FD1CC3200513F91 /* DiscoverBarVC.swift */; };
 		E247311B1FD1CC5D00513F91 /* GalleryBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247311A1FD1CC5D00513F91 /* GalleryBarVC.swift */; };
 		E247311D1FD1CCA300513F91 /* StoryBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247311C1FD1CCA300513F91 /* StoryBarVC.swift */; };
+		E24779CC1FEB3F3E006DAD5F /* FeaturedChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24779CB1FEB3F3E006DAD5F /* FeaturedChannelVC.swift */; };
+		E24779CE1FEB3F53006DAD5F /* ArtistsChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24779CD1FEB3F52006DAD5F /* ArtistsChannelVC.swift */; };
+		E24779D01FEB3F7E006DAD5F /* SeriesChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24779CF1FEB3F7E006DAD5F /* SeriesChannelVC.swift */; };
+		E24779D21FEB556E006DAD5F /* ChannelDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24779D11FEB556E006DAD5F /* ChannelDetailVC.swift */; };
+		E24779D41FEB7424006DAD5F /* BioBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24779D31FEB7424006DAD5F /* BioBarVC.swift */; };
+		E24AA1921FEBFC4A00CF6D5F /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AA1911FEBFC4A00CF6D5F /* TutorialVC.swift */; };
 		E251A2481FDBE29F00656D74 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251A2471FDBE29F00656D74 /* Global.swift */; };
 		E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DECE51FCE672100AA372C /* AppDelegate.swift */; };
 		E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25DECE91FCE672100AA372C /* Main.storyboard */; };
@@ -69,7 +74,6 @@
 		E22925431FD5863800B831F6 /* FeaturedBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedBarVC.swift; sourceTree = "<group>"; };
 		E22925471FD5868F00B831F6 /* LiveBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBarVC.swift; sourceTree = "<group>"; };
 		E22925491FD586A200B831F6 /* ReleaseBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseBarVC.swift; sourceTree = "<group>"; };
-		E2438B401FE880DA00B8C93F /* ArtistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsVC.swift; sourceTree = "<group>"; };
 		E24730FF1FD1CB6C00513F91 /* ChannelsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
 		E24731011FD1CB6C00513F91 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		E24731021FD1CB6C00513F91 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -83,6 +87,12 @@
 		E24731181FD1CC3200513F91 /* DiscoverBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBarVC.swift; sourceTree = "<group>"; };
 		E247311A1FD1CC5D00513F91 /* GalleryBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryBarVC.swift; sourceTree = "<group>"; };
 		E247311C1FD1CCA300513F91 /* StoryBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBarVC.swift; sourceTree = "<group>"; };
+		E24779CB1FEB3F3E006DAD5F /* FeaturedChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedChannelVC.swift; sourceTree = "<group>"; };
+		E24779CD1FEB3F52006DAD5F /* ArtistsChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsChannelVC.swift; sourceTree = "<group>"; };
+		E24779CF1FEB3F7E006DAD5F /* SeriesChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesChannelVC.swift; sourceTree = "<group>"; };
+		E24779D11FEB556E006DAD5F /* ChannelDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetailVC.swift; sourceTree = "<group>"; };
+		E24779D31FEB7424006DAD5F /* BioBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioBarVC.swift; sourceTree = "<group>"; };
+		E24AA1911FEBFC4A00CF6D5F /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		E251A2471FDBE29F00656D74 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E25DECE21FCE672100AA372C /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25DECE51FCE672100AA372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				E24730FF1FD1CB6C00513F91 /* ChannelsVC.swift */,
-				E2438B401FE880DA00B8C93F /* ArtistsVC.swift */,
+				E24779CB1FEB3F3E006DAD5F /* FeaturedChannelVC.swift */,
+				E24779CD1FEB3F52006DAD5F /* ArtistsChannelVC.swift */,
+				E24779CF1FEB3F7E006DAD5F /* SeriesChannelVC.swift */,
+				E24779D11FEB556E006DAD5F /* ChannelDetailVC.swift */,
+				E24779D31FEB7424006DAD5F /* BioBarVC.swift */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -255,6 +269,7 @@
 				E24731051FD1CB6C00513F91 /* Home */,
 				E24731071FD1CB6C00513F91 /* Videos */,
 				E20B6AA71FDB868F00614A43 /* RootVC.swift */,
+				E24AA1911FEBFC4A00CF6D5F /* TutorialVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -566,8 +581,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C7833F1FD25999007D8777 /* SearchVC.swift in Sources */,
+				E24779D21FEB556E006DAD5F /* ChannelDetailVC.swift in Sources */,
+				E24779D01FEB3F7E006DAD5F /* SeriesChannelVC.swift in Sources */,
 				E25DED221FCE756B00AA372C /* UIView+Shadow.swift in Sources */,
-				E2438B411FE880DA00B8C93F /* ArtistsVC.swift in Sources */,
 				E247311B1FD1CC5D00513F91 /* GalleryBarVC.swift in Sources */,
 				E21FCD361FDE1E47006CE0BB /* StoryVC.swift in Sources */,
 				E24731111FD1CB6C00513F91 /* DiscoverVC.swift in Sources */,
@@ -579,6 +595,7 @@
 				E2C783431FD259CF007D8777 /* VideosBarVC.swift in Sources */,
 				E25DED1F1FCE756B00AA372C /* UIView+Dimension.swift in Sources */,
 				E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */,
+				E24779CE1FEB3F53006DAD5F /* ArtistsChannelVC.swift in Sources */,
 				E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */,
 				E24731121FD1CB6C00513F91 /* HomeVC.swift in Sources */,
 				E25DED211FCE756B00AA372C /* UIView+Layer.swift in Sources */,
@@ -595,12 +612,15 @@
 				E25DECE61FCE672100AA372C /* AppDelegate.swift in Sources */,
 				E24731131FD1CB6C00513F91 /* VideosVC.swift in Sources */,
 				E25DED201FCE756B00AA372C /* UIView+Gradient.swift in Sources */,
+				E24AA1921FEBFC4A00CF6D5F /* TutorialVC.swift in Sources */,
 				E247310F1FD1CB6C00513F91 /* SigninVC.swift in Sources */,
 				E24731141FD1CB6C00513F91 /* AccountVC.swift in Sources */,
 				E24731191FD1CC3200513F91 /* DiscoverBarVC.swift in Sources */,
 				E247311D1FD1CCA300513F91 /* StoryBarVC.swift in Sources */,
 				E2C783451FD259E8007D8777 /* PhotosBarVC.swift in Sources */,
+				E24779D41FEB7424006DAD5F /* BioBarVC.swift in Sources */,
 				E24731151FD1CB6C00513F91 /* MyChannelsVC.swift in Sources */,
+				E24779CC1FEB3F3E006DAD5F /* FeaturedChannelVC.swift in Sources */,
 				E22925441FD5863800B831F6 /* FeaturedBarVC.swift in Sources */,
 				E25DED181FCE756B00AA372C /* String+Localization.swift in Sources */,
 				E21FCD381FDE1E67006CE0BB /* PhotoVC.swift in Sources */,

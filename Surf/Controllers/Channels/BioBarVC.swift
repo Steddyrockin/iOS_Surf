@@ -1,20 +1,20 @@
 //
-//  RootVC.swift
+//  BioBarVC.swift
 //  Surf
 //
-//  Created by Liming on 09/12/2017.
+//  Created by Liming on 21/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class RootVC: UITabBarController {
+class BioBarVC: UIViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +22,7 @@ class RootVC: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 
@@ -31,4 +32,9 @@ class RootVC: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "B I O"
+    }
+
 }

@@ -1,15 +1,15 @@
 //
-//  DiscoverBarVC.swift
+//  ArtistsChannelVC.swift
 //  Surf
 //
-//  Created by Liming on 02/12/2017.
+//  Created by Liming on 21/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
+class ArtistsChannelVC: UITableViewController, IndicatorInfoProvider  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +19,6 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.tableView.backgroundColor = .clear
-        
-//        let gradientLayer = CALayer()
-//        gradientLayer.contents = UIImage.init(named: "mask")?.cgImage
-//        gradientLayer.frame = self.view.bounds
-//        
-//        self.view.layer.mask = gradientLayer
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,77 +27,83 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
     }
 
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 8
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
         if indexPath.row == 0 {
-            let discoverCell = tableView.dequeueReusableCell(withIdentifier: "discoverCell0", for: indexPath) as! DiscoverCell
-            discoverCell.presentCtrl = self
-            
-            cell = discoverCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell0", for: indexPath)
         }
         
         if indexPath.row == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell1", for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell1", for: indexPath)
         }
         
         if indexPath.row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell2", for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell2", for: indexPath)
+        }
+        
+        if indexPath.row == 3 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell3", for: indexPath)
+        }
+        
+        if indexPath.row == 4 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell4", for: indexPath)
+        }
+        
+        if indexPath.row == 5 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell5", for: indexPath)
+        }
+        
+        if indexPath.row == 6 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell6", for: indexPath)
+        }
+        
+        if indexPath.row == 7 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell7", for: indexPath)
         }
         // Configure the cell...
-
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 355
-        }
-        
-        else if indexPath.row == 1 {
-            return 182
-        }
-        
-        else {
-            return 172
-        }
-        
+        return 84
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let photoVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoVC")
-            photoVC?.modalPresentationStyle = .overCurrentContext
-            self.present(photoVC!, animated: true, completion: nil)
-        }
-            
-        else if indexPath.row == 1 {
-            
-        }
-            
-        else {
-            var vcs = self.tabBarController?.childViewControllers
-            
-            let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
-            storyVC?.tabBarItem = vcs![2].tabBarItem
-            vcs![2] = storyVC!
-            
-            self.tabBarController?.setViewControllers(vcs, animated: false)
-            self.tabBarController?.selectedIndex = 2
-        }
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let channelVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelDetailVC") as! ChannelDetailVC
+        channelVC.fromIndex = 1
+        channelVC.tabBarItem = vcs![3].tabBarItem
+        vcs![3] = channelVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 3
     }
+
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -153,6 +151,6 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
     */
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "D I S C O V E R"
+        return "A R T I S T S"
     }
 }

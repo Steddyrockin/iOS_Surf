@@ -11,5 +11,6 @@ import UIKit
 class GalleryCell: UICollectionViewCell {
     @IBOutlet weak var backImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var maskImg: UIImageView!
     
 }
