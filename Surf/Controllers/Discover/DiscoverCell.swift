@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class DiscoverCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pager: UIPageControl!
@@ -37,6 +37,14 @@ class DiscoverCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: self.collectionView.bounds.size.width, height: self.collectionView.bounds.size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

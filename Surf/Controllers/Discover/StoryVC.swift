@@ -11,6 +11,7 @@ import UIKit
 class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var currentPage : Int = 0
     
@@ -18,6 +19,12 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        self.scrollView.contentInset = UIEdgeInsets.zero
+//        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+//        self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
+        
+        self.scrollView.contentSize = CGSize.init(width: self.scrollView.bounds.width, height: 1200)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right

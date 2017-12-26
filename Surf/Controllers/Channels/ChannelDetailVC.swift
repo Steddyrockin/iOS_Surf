@@ -49,6 +49,11 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
         self.closeController()
     }
     
+    @IBAction func closeAction(_ sender: Any) {
+        self.closeController()
+    }
+    
+    
     func closeController() {
         let channelsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelsVC") as! ChannelsVC
         var vcs = self.tabBarController?.childViewControllers

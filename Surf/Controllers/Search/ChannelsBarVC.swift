@@ -62,7 +62,15 @@ class ChannelsBarVC: UITableViewController, IndicatorInfoProvider {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.tabBarController?.selectedIndex = 3
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let channelVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelDetailVC") as! ChannelDetailVC
+        channelVC.fromIndex = 0
+        channelVC.tabBarItem = vcs![3].tabBarItem
+        vcs![3] = channelVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 3
     }
 
     /*

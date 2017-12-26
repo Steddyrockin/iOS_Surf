@@ -17,7 +17,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.pager.numberOfPages = 4
+        self.pager.numberOfPages = 20
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +35,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

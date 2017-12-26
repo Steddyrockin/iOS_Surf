@@ -91,11 +91,7 @@ class DiscoverBarVC: UITableViewController, IndicatorInfoProvider  {
             self.present(photoVC!, animated: true, completion: nil)
         }
             
-        else if indexPath.row == 1 {
-            
-        }
-            
-        else {
+        else  {
             var vcs = self.tabBarController?.childViewControllers
             
             let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")

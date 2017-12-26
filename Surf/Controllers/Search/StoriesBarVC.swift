@@ -38,9 +38,6 @@ class StoriesBarVC: UITableViewController, IndicatorInfoProvider {
         return 3
     }
     
-    
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storyCell", for: indexPath)
 
@@ -51,6 +48,19 @@ class StoriesBarVC: UITableViewController, IndicatorInfoProvider {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 279
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+        storyVC?.tabBarItem = vcs![2].tabBarItem
+        vcs![2] = storyVC!
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 2
+        
     }
     /*
     // Override to support conditional editing of the table view.
@@ -98,6 +108,6 @@ class StoriesBarVC: UITableViewController, IndicatorInfoProvider {
     */
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "S T O R Y S"
+        return "S T O R I E S"
     }
 }

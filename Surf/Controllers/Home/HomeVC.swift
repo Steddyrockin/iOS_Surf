@@ -79,6 +79,20 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var vcs = self.tabBarController?.childViewControllers
+        
+        let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+        storyVC?.tabBarItem = vcs![2].tabBarItem
+        vcs![2] = storyVC!
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 2
+    }
 
     @IBAction func searchAction(_ sender: UIButton) {
         let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchVC")

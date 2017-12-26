@@ -2,14 +2,16 @@
 //  ArtistsChannelVC.swift
 //  Surf
 //
-//  Created by Liming on 21/12/2017.
+//  Created by Liming on 23/12/2017.
 //  Copyright © 2017 surf. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class ArtistsChannelVC: UITableViewController, IndicatorInfoProvider  {
+private let reuseIdentifier = "artistsCell"
+
+class ArtistsChannelVC: UICollectionViewController, IndicatorInfoProvider, UICollectionViewDelegateFlowLayout  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +19,10 @@ class ArtistsChannelVC: UITableViewController, IndicatorInfoProvider  {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Register cell classes
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,131 +30,88 @@ class ArtistsChannelVC: UITableViewController, IndicatorInfoProvider  {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 8
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 20
     }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
+        // Configure the cell
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        
-        if indexPath.row == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell0", for: indexPath)
-        }
-        
-        if indexPath.row == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell1", for: indexPath)
-        }
-        
-        if indexPath.row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell2", for: indexPath)
-        }
-        
-        if indexPath.row == 3 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell3", for: indexPath)
-        }
-        
-        if indexPath.row == 4 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell4", for: indexPath)
-        }
-        
-        if indexPath.row == 5 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell5", for: indexPath)
-        }
-        
-        if indexPath.row == 6 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell6", for: indexPath)
-        }
-        
-        if indexPath.row == 7 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "channelCell7", for: indexPath)
-        }
-        // Configure the cell...
-        
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 84
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: collectionView.bounds.size.width/2, height: 84)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    // MARK: UICollectionViewDelegate
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var vcs = self.tabBarController?.childViewControllers
         
         let channelVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelDetailVC") as! ChannelDetailVC
-        channelVC.fromIndex = 1
+        channelVC.fromIndex = 2
         channelVC.tabBarItem = vcs![3].tabBarItem
         vcs![3] = channelVC
         
         self.tabBarController?.setViewControllers(vcs, animated: false)
         self.tabBarController?.selectedIndex = 3
     }
-
-
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
 
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
+    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
 
     /*
-    // MARK: - Navigation
+    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    
     }
     */
-
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return "A R T I S T S"
     }
+
 }

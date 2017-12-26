@@ -35,6 +35,20 @@ class SearchVC: ButtonBarPagerTabStripViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textFieldEditBegin(_ sender: UITextField) {
+        
+        if sender.text == "Search..." {
+            sender.text = ""
+        }
+    }
+    
+    @IBAction func textFieldEditEnd(_ sender: UITextField) {
+        
+        if sender.text == "" {
+            sender.text = "Search..."
+        }
+    }
+    
     @IBAction func searchAction(_ sender: Any) {
         
     }
