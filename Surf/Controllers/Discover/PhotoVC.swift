@@ -17,7 +17,17 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.pager.numberOfPages = 20
+        self.pager.numberOfPages = 8
+        
+        self.view.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.alpha = 1.0
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +45,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,7 +120,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        if self.pager.currentPage < 4 {
+        if self.pager.currentPage < 8 {
             self.pager.currentPage = self.pager.currentPage + 1
             self.pagerControllerChanged(self.pager)
         }

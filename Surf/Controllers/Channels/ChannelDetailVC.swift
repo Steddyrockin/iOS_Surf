@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ChannelDetailVC: ButtonBarPagerTabStripViewController {
+class ChannelDetailVC: ButtonBarPagerTabStripViewController, UITabBarControllerDelegate {
 
     var isReload = false
     var fromIndex : Int = 0
@@ -28,6 +28,8 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
         
         super.viewDidLoad()
         
+        self.tabBarController?.delegate = self
+        
         self.buttonBarView.backgroundColor = UIColor.clear
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
@@ -37,6 +39,8 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        self.view.alpha = 0.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,8 +48,15 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func respondToSwipeGesture(_ sender: UITapGestureRecognizer) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.alpha = 1.0
+        }, completion: nil)
+    }
+    
+    @objc func respondToSwipeGesture(_ sender: UITapGestureRecognizer) {
         self.closeController()
     }
     
@@ -55,6 +66,13 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
     
     
     func closeController() {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromRight
+        self.view.window!.layer.add(transition, forKey: nil)
+        
         let channelsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelsVC") as! ChannelsVC
         var vcs = self.tabBarController?.childViewControllers
         
@@ -116,5 +134,18 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let channelsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelsVC") as! ChannelsVC
+        var vcs = self.tabBarController?.childViewControllers
+        
+        vcs![3] = channelsVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 3
+        
+        //channelsVC.moveToViewController(at: self.fromIndex)
+    }
 
 }

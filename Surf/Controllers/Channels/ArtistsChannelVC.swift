@@ -74,7 +74,7 @@ class ArtistsChannelVC: UICollectionViewController, IndicatorInfoProvider, UICol
         var vcs = self.tabBarController?.childViewControllers
         
         let channelVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelDetailVC") as! ChannelDetailVC
-        channelVC.fromIndex = 2
+        channelVC.fromIndex = 0
         channelVC.tabBarItem = vcs![3].tabBarItem
         vcs![3] = channelVC
         

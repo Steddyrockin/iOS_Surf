@@ -86,7 +86,7 @@ class SeriesChannelVC: UITableViewController, IndicatorInfoProvider  {
         var vcs = self.tabBarController?.childViewControllers
         
         let channelVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelDetailVC") as! ChannelDetailVC
-        channelVC.fromIndex = 2
+        channelVC.fromIndex = 0
         channelVC.tabBarItem = vcs![3].tabBarItem
         vcs![3] = channelVC
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITabBarControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -18,13 +18,12 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tabBarController?.delegate = self
         // Do any additional setup after loading the view.
         
 //        self.scrollView.contentInset = UIEdgeInsets.zero
 //        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
-//        self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
-        
-        self.scrollView.contentSize = CGSize.init(width: self.scrollView.bounds.width, height: 1200)
+        self.scrollView.contentSize = CGSize.init(width: self.scrollView.bounds.width, height: 800)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -33,6 +32,16 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        self.view.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.alpha = 1.0
+        }, completion: nil)
     }
 
     @objc func respondToSwipeGesture(_ sender: UITapGestureRecognizer) {
@@ -45,6 +54,13 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func closeController() {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromRight
+        self.view.window!.layer.add(transition, forKey: nil)
+        
         let discoverVC = self.storyboard?.instantiateViewController(withIdentifier: "DiscoverVC") as! DiscoverVC
         
         var vcs = self.tabBarController?.childViewControllers
@@ -54,7 +70,7 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         self.tabBarController?.setViewControllers(vcs, animated: false)
         self.tabBarController?.selectedIndex = 2
         
-        discoverVC.moveToViewController(at: 2)
+        //discoverVC.moveToViewController(at: 2)
     }
     
     
@@ -118,6 +134,18 @@ class StoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     @IBAction func shareAction(_ sender: UIButton) {
         
+    }
+    
+    // UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let discoverVC = self.storyboard?.instantiateViewController(withIdentifier: "DiscoverVC") as! DiscoverVC
+        
+        var vcs = self.tabBarController?.childViewControllers
+        
+        vcs![2] = discoverVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 2
     }
     
 }

@@ -52,14 +52,20 @@ class StoriesBarVC: UITableViewController, IndicatorInfoProvider {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var vcs = self.tabBarController?.childViewControllers
-        
-        let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
-        storyVC?.tabBarItem = vcs![2].tabBarItem
-        vcs![2] = storyVC!
-        
-        self.tabBarController?.setViewControllers(vcs, animated: false)
-        self.tabBarController?.selectedIndex = 2
+        self.dismiss(animated: false) {
+            let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "RootVC") as! UITabBarController
+            
+            var vcs = rootVC.childViewControllers
+            
+            let storyVC = self.storyboard?.instantiateViewController(withIdentifier: "StoryVC")
+            storyVC?.tabBarItem = vcs[2].tabBarItem
+            vcs[2] = storyVC!
+            
+            rootVC.setViewControllers(vcs, animated: false)
+            rootVC.selectedIndex = 2
+            
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
+        }
         
     }
     /*

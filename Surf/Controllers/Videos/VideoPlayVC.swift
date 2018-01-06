@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate {
 
     @IBOutlet weak var commentTxt: UITextField!
     var fromIndex : Int = 0
@@ -16,6 +16,7 @@ class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tabBarController?.delegate = self
         // Do any additional setup after loading the view.
         Global.sharedInstance.videoPlayed = true
         
@@ -26,11 +27,22 @@ class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        
+        self.view.alpha = 0.0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.alpha = 1.0
+        }, completion: nil)
     }
     
     @objc func respondToSwipeGesture(_ sender: UITapGestureRecognizer) {
@@ -39,10 +51,18 @@ class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @IBAction func closeAction(_ sender: Any) {
+        
         self.closeController()
     }
     
     func closeController() {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromRight
+        self.view.window!.layer.add(transition, forKey: nil)
+        
         let videoVC = self.storyboard?.instantiateViewController(withIdentifier: "VideosVC") as! VideosVC
         var vcs = self.tabBarController?.childViewControllers
         
@@ -143,4 +163,17 @@ class VideoPlayVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+    
+    // UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let videoVC = self.storyboard?.instantiateViewController(withIdentifier: "VideosVC") as! VideosVC
+        var vcs = self.tabBarController?.childViewControllers
+        
+        vcs![1] = videoVC
+        
+        self.tabBarController?.setViewControllers(vcs, animated: false)
+        self.tabBarController?.selectedIndex = 1
+        
+        videoVC.moveToViewController(at: self.fromIndex)
+    }
 }

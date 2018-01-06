@@ -49,15 +49,21 @@ class VideosBarVC: UITableViewController, IndicatorInfoProvider {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var vcs = self.tabBarController?.childViewControllers
-        
-        let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
-        playerVC.fromIndex = 1
-        playerVC.tabBarItem = vcs![1].tabBarItem
-        vcs![1] = playerVC
-        
-        self.tabBarController?.setViewControllers(vcs, animated: false)
-        self.tabBarController?.selectedIndex = 1
+        self.dismiss(animated: false) {
+            let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "RootVC") as! UITabBarController
+            
+            var vcs = rootVC.childViewControllers
+            
+            let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
+            playerVC.fromIndex = 0
+            playerVC.tabBarItem = vcs[1].tabBarItem
+            vcs[1] = playerVC
+            
+            rootVC.setViewControllers(vcs, animated: false)
+            rootVC.selectedIndex = 1
+            
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
+        }  
     }
     
     @IBAction func likeAction(_ sender: UIButton) {

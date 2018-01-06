@@ -53,7 +53,7 @@ class ReleaseBarVC: UITableViewController, IndicatorInfoProvider {
         var vcs = self.tabBarController?.childViewControllers
         
         let playerVC = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayVC") as! VideoPlayVC
-        playerVC.fromIndex = 2
+        playerVC.fromIndex = 0
         playerVC.tabBarItem = vcs![1].tabBarItem
         vcs![1] = playerVC
         
