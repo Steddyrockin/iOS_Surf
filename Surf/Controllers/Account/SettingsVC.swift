@@ -30,7 +30,23 @@ class SettingsVC: UIViewController, IndicatorInfoProvider {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func logoutAction(_ sender: Any) {
+    }
+    
+    @IBAction func deleteAccountAction(_ sender: Any) {
+    }
+    
+    @IBAction func termsAction(_ sender: Any) {
+        guard let url = URL(string: "http://getsurfapp.com/terms") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     /*
     // MARK: - Navigation
 

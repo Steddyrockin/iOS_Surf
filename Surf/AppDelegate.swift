@@ -8,6 +8,7 @@
 
 import UIKit
 import HockeySDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Do some additional configuration if needed here
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()
+        
+        FirebaseApp.configure()
         
         RunLoop.current.run(until: NSDate(timeIntervalSinceNow: 2) as Date)
         

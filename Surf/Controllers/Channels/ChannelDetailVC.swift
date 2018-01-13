@@ -32,11 +32,11 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController, UITabBarControllerD
         
         self.buttonBarView.backgroundColor = UIColor.clear
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToRightSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture(_:)))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action:  #selector(respondToLeftSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
         
@@ -56,21 +56,35 @@ class ChannelDetailVC: ButtonBarPagerTabStripViewController, UITabBarControllerD
         }, completion: nil)
     }
     
-    @objc func respondToSwipeGesture(_ sender: UITapGestureRecognizer) {
-        self.closeController()
+    @objc func respondToRightSwipeGesture(_ sender: UITapGestureRecognizer) {
+        
+        self.closeController(direction: true)
+    }
+    
+    @objc func respondToLeftSwipeGesture(_ sender: UITapGestureRecognizer) {
+        
+        self.closeController(direction: false)
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.closeController()
+        
+        self.closeController(direction: false)
     }
     
     
-    func closeController() {
+    func closeController(direction: Bool) {
         let transition: CATransition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionReveal
-        transition.subtype = kCATransitionFromRight
+        
+        if direction {
+            transition.subtype = kCATransitionFromRight
+        }
+        else {
+            transition.subtype = kCATransitionFromLeft
+        }
+        
         self.view.window!.layer.add(transition, forKey: nil)
         
         let channelsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChannelsVC") as! ChannelsVC

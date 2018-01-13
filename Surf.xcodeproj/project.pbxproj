@@ -61,6 +61,7 @@
 		E2C783471FD259FD007D8777 /* StoriesBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C783461FD259FD007D8777 /* StoriesBarVC.swift */; };
 		E2C8C5191FEDDFF9006B93D1 /* ArtistsChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C8C5181FEDDFF9006B93D1 /* ArtistsChannelVC.swift */; };
 		E2D1EC991FD4F094003C4399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D1EC981FD4F091003C4399 /* Assets.xcassets */; };
+		E2FAFC932003025300D5AEA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2FAFC922003025300D5AEA6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		E2C783461FD259FD007D8777 /* StoriesBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesBarVC.swift; sourceTree = "<group>"; };
 		E2C8C5181FEDDFF9006B93D1 /* ArtistsChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsChannelVC.swift; sourceTree = "<group>"; };
 		E2D1EC981FD4F091003C4399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2FAFC922003025300D5AEA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4206082346F7E208796E760 /* Pods_Surf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -254,6 +256,7 @@
 				E25DECE91FCE672100AA372C /* Main.storyboard */,
 				E25DECEE1FCE672100AA372C /* LaunchScreen.storyboard */,
 				E25DECF11FCE672100AA372C /* Info.plist */,
+				E2FAFC922003025300D5AEA6 /* GoogleService-Info.plist */,
 			);
 			path = Surf;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				E2B0F96B1FCEE0220000A978 /* texgyreadventor-bolditalic.otf in Resources */,
 				E25DECEB1FCE672100AA372C /* Main.storyboard in Resources */,
 				E2B0F96D1FCEE0220000A978 /* texgyreadventor-regular.otf in Resources */,
+				E2FAFC932003025300D5AEA6 /* GoogleService-Info.plist in Resources */,
 				E2D1EC991FD4F094003C4399 /* Assets.xcassets in Resources */,
 				E2B0F96C1FCEE0220000A978 /* texgyreadventor-italic.otf in Resources */,
 			);
@@ -517,7 +521,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Surf/Pods-Surf-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -537,23 +541,43 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Surf/Pods-Surf-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

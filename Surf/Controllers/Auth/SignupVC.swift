@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import Firebase
 
 class SignupVC: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -19,6 +20,7 @@ UINavigationControllerDelegate {
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var cpassTxt: UITextField!
     
+    var avatarImg: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,7 +165,20 @@ UINavigationControllerDelegate {
             return
         }
         
-        self.performSegue(withIdentifier: "home_segue", sender: self)
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        
+        Auth.auth().createUser(withEmail: self.emailTxt.text!, password: self.passTxt.text!, completion: { (user, error) in
+            PKHUD.sharedHUD.hide()
+            
+            if let error = error {
+                self.showAlert(contents:error.localizedDescription)
+                return
+            }
+            
+            self.view.endEditing(true)
+            self.performSegue(withIdentifier: "home_segue", sender: self)
+        })
     }
     
     func showAlert(contents : String) {
@@ -197,7 +212,7 @@ UINavigationControllerDelegate {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //save image
             //display image
-            
+            self.avatarImg = image
             self.photoBtn.imageView?.contentMode = UIViewContentMode.scaleAspectFill
             self.photoBtn.setImage(image, for: UIControlState.normal)
         }
@@ -207,6 +222,15 @@ UINavigationControllerDelegate {
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadImage() {
+        
+//        let data = UIImageJPEGRepresentation(self.image!, 0.8)! as Data as NSData
+//        // set upload path
+//        let filePath = "\(Auth.auth().currentUser!.uid)/\("userPhoto")"
+//        let metaData = StorageMetadata()
+//        metaData.contentType = "image/jpg"
     }
     /*
     // MARK: - Navigation

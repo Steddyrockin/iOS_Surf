@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import PKHUD
+import Firebase
 
 class SigninVC: UIViewController {
 
@@ -82,7 +83,18 @@ class SigninVC: UIViewController {
             return
         }
         
-        self.performSegue(withIdentifier: "home_segue", sender: self)
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        Auth.auth().signIn(withEmail: self.emailTxt.text!, password: self.passTxt.text!, completion: { (user, error) in
+            PKHUD.sharedHUD.hide()
+            
+            if let error = error {
+                self.showAlert(contents:error.localizedDescription)
+                return
+            }
+            
+            self.performSegue(withIdentifier: "home_segue", sender: self)
+        })
     }
     
     @IBAction func fbLoginAction(_ sender: UIButton) {
@@ -99,7 +111,16 @@ class SigninVC: UIViewController {
                 return
             }
             
-            self.performSegue(withIdentifier: "home_segue", sender: self)
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    self.showAlert(contents:error.localizedDescription)
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "home_segue", sender: self)
+            }
         }
     }
     

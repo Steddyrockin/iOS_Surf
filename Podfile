@@ -25,4 +25,10 @@ target 'Surf' do
   # HockeySDK
   pod 'HockeySDK', '~> 5.0.0'
   
+  # Firebase
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  
 end
