@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Contentful
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var likeBtn: UIButton!
+    
+    let client = Client(spaceId: Global.CONTENTFUL_ID, accessToken: Global.CONTENTFUL_TOKEN)
+    
+    var homeEvent: Event! = nil
+    var homeGallery: Gallery! = nil
+    var homeStory: Story! = nil
+    var homeChannel: Channel! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +27,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         // Do any additional setup after loading the view.
         self.tabBarController?.tabBar.clipsToBounds = true
         self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+        
+        self.loadContentsOfHome()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +41,68 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         super.viewWillAppear(animated)
         
         Global.sharedInstance.preIndex = 0
+    }
+    
+    func loadContentsOfHome() {
+        let query = Query(where: "content_type", .equals("home"))
+        
+        self.client.fetchEntries(with: query) { (result) in
+            switch result {
+                case .success(let entriesArrayResponse):
+                    let contents = entriesArrayResponse.items
+                
+                    let homeEntry = contents.first
+                    let arrayOfIDs = homeEntry?.fields["homePage"] as! [Link]
+                    
+                    var type = 0
+                    let dispatchGroup = DispatchGroup()
+
+                    for mLink in arrayOfIDs {
+                        dispatchGroup.enter()
+                        self.loadEntry(with: mLink.id, type: type, withCompletionHandler: {
+                            dispatchGroup.leave()
+                        })
+
+                        type += 1
+                    }
+                
+                    dispatchGroup.notify(queue: DispatchQueue.main) {
+                        // Do stuff with home entries.
+                        self.collectionView.reloadData()
+                    }
+                
+                case .error(let error):
+                    print("Oh no something went wrong: \(error)")
+            }
+        }
+    }
+    
+    func loadEntry(with eventID: String, type: Int, withCompletionHandler completionHandler: @escaping () -> Void) {
+        self.client.fetchEntry(id: eventID, completion: { (result) in
+            switch result {
+                case .success(let entry):
+                    if type == 0 {
+                        self.homeEvent = Event(entry : entry)
+                    }
+                    
+                    if type == 1 {
+                        self.homeChannel = Channel(entry : entry)
+                    }
+                    
+                    if type == 2 {
+                        self.homeStory = Story(entry : entry)
+                    }
+                    
+                    if type == 3 {
+                        self.homeGallery = Gallery(entry : entry)
+                    }
+                
+                case .error(let error):
+                    print("Oh no something went wrong: \(error)")
+            }
+            
+            completionHandler()
+        })
     }
     
     /*
@@ -52,20 +125,20 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         var cellId = ""
         
         switch indexPath.row {
-        case 0:
-            cellId = "eventCell"
-            break
-        case 1:
-            cellId = "channelCell"
-            break
-        case 2:
-            cellId = "storyCell"
-            break
-        case 3:
-            cellId = "galleryCell"
-            break
-        default:
-            break
+            case 0:
+                cellId = "eventCell"
+                break
+            case 1:
+                cellId = "channelCell"
+                break
+            case 2:
+                cellId = "storyCell"
+                break
+            case 3:
+                cellId = "galleryCell"
+                break
+            default:
+                break
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)

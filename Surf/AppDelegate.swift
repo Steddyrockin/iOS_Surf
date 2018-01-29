@@ -10,11 +10,11 @@ import UIKit
 import HockeySDK
 import Firebase
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         RunLoop.current.run(until: NSDate(timeIntervalSinceNow: 2) as Date)
+        
+        if Auth.auth().currentUser != nil {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let rootVC = storyboard.instantiateViewController(withIdentifier: "RootVC")
+            self.window?.rootViewController = rootVC
+        }
         
         return true
     }
