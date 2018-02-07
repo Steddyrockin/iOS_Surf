@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210" y="29"/>
+            <point key="canvasLocation" x="-487" y="32"/>
         </scene>
         <!--SignupVC-->
         <scene sceneID="5As-bZ-V7v">
@@ -576,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z12-TO-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="29"/>
+            <point key="canvasLocation" x="332" y="32"/>
         </scene>
         <!--TutorialVC-->
         <scene sceneID="AK5-c3-eSC">
@@ -878,7 +878,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1j-ow-xkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="27.436281859070466"/>
+            <point key="canvasLocation" x="-1999" y="32"/>
         </scene>
         <!--VideosVC-->
         <scene sceneID="Bej-b6-dGk">
@@ -3868,7 +3868,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-XM-cyq">
                                 <rect key="frame" x="0.0" y="48" width="375" height="205"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_photo" translatesAutoresizingMaskIntoConstraints="NO" id="han-9g-2OB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_photo" translatesAutoresizingMaskIntoConstraints="NO" id="han-9g-2OB">
                                         <rect key="frame" x="26" y="35" width="150" height="150"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -3987,6 +3987,9 @@
                     <connections>
                         <outlet property="buttonBarView" destination="1ET-ru-nsP" id="jlN-tW-x1h"/>
                         <outlet property="containerView" destination="XOr-Ol-Rvr" id="r3k-kt-VCn"/>
+                        <outlet property="fnameLbl" destination="xmi-kC-n2q" id="1Nb-4v-rJH"/>
+                        <outlet property="lnameLbl" destination="cW9-dj-WBg" id="bhV-4t-6lP"/>
+                        <outlet property="photoBackImg" destination="s9s-nd-cdE" id="STz-yZ-3Uf"/>
                         <outlet property="photoImg" destination="han-9g-2OB" id="9Yv-hv-qsE"/>
                     </connections>
                 </viewController>
@@ -5967,6 +5970,6 @@
         <image name="videos_tutorial" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e0M-11-IQ4"/>
+        <segue reference="4n9-pn-vWd"/>
     </inferredMetricsTieBreakers>
 </document>

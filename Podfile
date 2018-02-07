@@ -31,4 +31,11 @@ target 'Surf' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   
+  # Contentful
+  pod 'Contentful'
+  
+  # Vimeo
+  # pod 'VimeoNetworking'
+  # pod 'PlayerKit'
+  
 end

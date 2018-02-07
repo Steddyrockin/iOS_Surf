@@ -21,7 +21,8 @@ UINavigationControllerDelegate {
     @IBOutlet weak var cpassTxt: UITextField!
     
     var avatarImg: UIImage!
-
+    var avatarURL: URL!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -168,19 +169,55 @@ UINavigationControllerDelegate {
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         
+        
+        
         Auth.auth().createUser(withEmail: self.emailTxt.text!, password: self.passTxt.text!, completion: { (user, error) in
-            PKHUD.sharedHUD.hide()
-            
+
             if let error = error {
+                PKHUD.sharedHUD.hide()
+                
                 self.showAlert(contents:error.localizedDescription)
                 return
             }
             
-            self.view.endEditing(true)
-            self.performSegue(withIdentifier: "home_segue", sender: self)
+            if self.avatarImg != nil {
+                self.uploadImage()
+            }
+            else {
+                self.saveProfile()
+            }
+  
         })
     }
     
+    func saveProfile() {
+        let profileRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        
+        if self.avatarURL != nil {
+            profileRequest?.photoURL = self.avatarURL
+        }
+        
+        profileRequest?.displayName = "\(self.fnameTxt.text!) \(self.lnameText.text!)"
+        
+        profileRequest?.commitChanges(completion: { (error) in
+            
+            PKHUD.sharedHUD.hide()
+            
+            if let error = error {
+                self.showAlert(contents:error.localizedDescription)
+            }
+            else {
+                self.view.endEditing(true)
+                self.performSegue(withIdentifier: "home_segue", sender: self)
+            }
+        })
+    }
+    
+    /**
+     The function for displaying the alert.
+     
+     - parameter contents: the contents text of alert.
+     */
     func showAlert(contents : String) {
         PKHUD.sharedHUD.contentView = PKHUDErrorView(title: nil, subtitle: contents)
         PKHUD.sharedHUD.show()
@@ -226,12 +263,33 @@ UINavigationControllerDelegate {
     
     func uploadImage() {
         
-//        let data = UIImageJPEGRepresentation(self.image!, 0.8)! as Data as NSData
-//        // set upload path
-//        let filePath = "\(Auth.auth().currentUser!.uid)/\("userPhoto")"
-//        let metaData = StorageMetadata()
-//        metaData.contentType = "image/jpg"
+        let data = UIImageJPEGRepresentation(self.avatarImg!, 0.8)! as Data as NSData
+        // set upload path
+        let filePath = "\(Auth.auth().currentUser!.uid)/\("userPhoto")"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        // Create a storage reference from our storage service
+        let storageRef = Storage.storage().reference()
+        
+        storageRef.child(filePath).putData(data as Data, metadata: metaData){(metaData,error) in
+            if let error = error {
+                PKHUD.sharedHUD.hide()
+                self.showAlert(contents: error.localizedDescription)
+                return
+            }
+            else{
+                //store downloadURL
+                self.avatarURL = metaData!.downloadURL()?.absoluteURL
+            }
+            
+            self.saveProfile()
+        }
     }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

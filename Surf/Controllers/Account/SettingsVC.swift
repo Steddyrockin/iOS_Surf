@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import Firebase
 
 class SettingsVC: UIViewController, IndicatorInfoProvider {
     
@@ -31,9 +32,25 @@ class SettingsVC: UIViewController, IndicatorInfoProvider {
     }
     
     @IBAction func logoutAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SigninVC")
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     @IBAction func deleteAccountAction(_ sender: Any) {
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if let error = error {
+                print ("Error account delete: %@", error)
+                return
+            }
+            
+            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SigninVC")
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+        })
     }
     
     @IBAction func termsAction(_ sender: Any) {

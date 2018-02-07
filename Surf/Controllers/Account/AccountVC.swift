@@ -8,13 +8,19 @@
 
 import UIKit
 import XLPagerTabStrip
+import Firebase
+import SDWebImage
 
 class AccountVC: ButtonBarPagerTabStripViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate  {
 
     @IBOutlet weak var barView: ButtonBarView!
     @IBOutlet weak var contentsView: UIScrollView!
+    
     @IBOutlet weak var photoImg: UIImageView!
+    @IBOutlet weak var photoBackImg: UIImageView!
+    @IBOutlet weak var fnameLbl: UILabel!
+    @IBOutlet weak var lnameLbl: UILabel!
     
     var isReload = false
     
@@ -33,11 +39,23 @@ UINavigationControllerDelegate  {
         super.viewDidLoad()
         
         self.buttonBarView.backgroundColor = UIColor.clear
+        
+        self.fillUser(with: Auth.auth().currentUser!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fillUser(with user: User) {
+        self.photoImg.sd_setImage(with: user.photoURL, completed: nil)
+        self.photoBackImg.sd_setImage(with: user.photoURL, completed: nil)
+        
+        let nameArray = user.displayName?.components(separatedBy: " ")
+        
+        self.fnameLbl.text = nameArray![0].uppercased()
+        self.lnameLbl.text = nameArray![1].uppercased()
     }
     
     @IBAction func searchAction(_ sender: UIButton) {

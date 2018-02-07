@@ -16,6 +16,10 @@
 		E22925441FD5863800B831F6 /* FeaturedBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925431FD5863800B831F6 /* FeaturedBarVC.swift */; };
 		E22925481FD5868F00B831F6 /* LiveBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925471FD5868F00B831F6 /* LiveBarVC.swift */; };
 		E229254A1FD586A200B831F6 /* ReleaseBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22925491FD586A200B831F6 /* ReleaseBarVC.swift */; };
+		E23BA1942010F9FF007513A9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23BA1932010F9FF007513A9 /* Event.swift */; };
+		E23BA196201109BE007513A9 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23BA195201109BE007513A9 /* Channel.swift */; };
+		E23BA198201109CA007513A9 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23BA197201109CA007513A9 /* Gallery.swift */; };
+		E23BA19A201109D7007513A9 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23BA199201109D7007513A9 /* Story.swift */; };
 		E247310E1FD1CB6C00513F91 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24730FF1FD1CB6C00513F91 /* ChannelsVC.swift */; };
 		E247310F1FD1CB6C00513F91 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731011FD1CB6C00513F91 /* SigninVC.swift */; };
 		E24731101FD1CB6C00513F91 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24731021FD1CB6C00513F91 /* SignupVC.swift */; };
@@ -75,6 +79,10 @@
 		E22925431FD5863800B831F6 /* FeaturedBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedBarVC.swift; sourceTree = "<group>"; };
 		E22925471FD5868F00B831F6 /* LiveBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBarVC.swift; sourceTree = "<group>"; };
 		E22925491FD586A200B831F6 /* ReleaseBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseBarVC.swift; sourceTree = "<group>"; };
+		E23BA1932010F9FF007513A9 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E23BA195201109BE007513A9 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		E23BA197201109CA007513A9 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		E23BA199201109D7007513A9 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		E24730FF1FD1CB6C00513F91 /* ChannelsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsVC.swift; sourceTree = "<group>"; };
 		E24731011FD1CB6C00513F91 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		E24731021FD1CB6C00513F91 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -281,6 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				E251A2471FDBE29F00656D74 /* Global.swift */,
+				E23BA1932010F9FF007513A9 /* Event.swift */,
+				E23BA195201109BE007513A9 /* Channel.swift */,
+				E23BA197201109CA007513A9 /* Gallery.swift */,
+				E23BA199201109D7007513A9 /* Story.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,11 +554,13 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -563,11 +577,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -613,6 +629,7 @@
 				E21FCD361FDE1E47006CE0BB /* StoryVC.swift in Sources */,
 				E24731111FD1CB6C00513F91 /* DiscoverVC.swift in Sources */,
 				E22925481FD5868F00B831F6 /* LiveBarVC.swift in Sources */,
+				E23BA198201109CA007513A9 /* Gallery.swift in Sources */,
 				E2C64DC31FE4DEB10074D9C3 /* DiscoverCell.swift in Sources */,
 				E25DED191FCE756B00AA372C /* UIColor+HexString.m in Sources */,
 				E25DED1A1FCE756B00AA372C /* UIImage+CS_Extensions.m in Sources */,
@@ -623,7 +640,10 @@
 				E25DED171FCE756B00AA372C /* Double+Randomization.swift in Sources */,
 				E24731121FD1CB6C00513F91 /* HomeVC.swift in Sources */,
 				E25DED211FCE756B00AA372C /* UIView+Layer.swift in Sources */,
+				E23BA196201109BE007513A9 /* Channel.swift in Sources */,
+				E23BA1942010F9FF007513A9 /* Event.swift in Sources */,
 				E24731161FD1CB6C00513F91 /* MyMediaVC.swift in Sources */,
+				E23BA19A201109D7007513A9 /* Story.swift in Sources */,
 				E2C783411FD259B8007D8777 /* ChannelsBarVC.swift in Sources */,
 				E24731171FD1CB6C00513F91 /* SettingsVC.swift in Sources */,
 				E251A2481FDBE29F00656D74 /* Global.swift in Sources */,
